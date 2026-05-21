@@ -330,6 +330,68 @@ class TranslationSeeder extends Seeder
             ['group' => 'sub_rental_contracts', 'key' => 'terms', 'text_ar' => 'الشروط', 'text_en' => 'Terms'],
             ['group' => 'sub_rental_contracts', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
             ['group' => 'sub_rental_contracts', 'key' => 'contract_file', 'text_ar' => 'ملف العقد', 'text_en' => 'Contract file'],
+
+            // Phase 4 navigation
+            ['group' => 'navigation', 'key' => 'pricing', 'text_ar' => 'التسعير', 'text_en' => 'Pricing'],
+            ['group' => 'navigation', 'key' => 'rate_cards', 'text_ar' => 'بطاقات الأسعار', 'text_en' => 'Rate Cards'],
+            ['group' => 'navigation', 'key' => 'quotations', 'text_ar' => 'عروض الأسعار', 'text_en' => 'Quotations'],
+
+            // QuotationStatus
+            ['group' => 'enums', 'key' => 'quotation_status.draft', 'text_ar' => 'مسودة', 'text_en' => 'Draft'],
+            ['group' => 'enums', 'key' => 'quotation_status.sent', 'text_ar' => 'مُرسل', 'text_en' => 'Sent'],
+            ['group' => 'enums', 'key' => 'quotation_status.accepted', 'text_ar' => 'مقبول', 'text_en' => 'Accepted'],
+            ['group' => 'enums', 'key' => 'quotation_status.rejected', 'text_ar' => 'مرفوض', 'text_en' => 'Rejected'],
+            ['group' => 'enums', 'key' => 'quotation_status.expired', 'text_ar' => 'منتهي', 'text_en' => 'Expired'],
+
+            // RateCards field labels
+            ['group' => 'rate_cards', 'key' => 'category', 'text_ar' => 'الفئة', 'text_en' => 'Category'],
+            ['group' => 'rate_cards', 'key' => 'corporate_account', 'text_ar' => 'الحساب المؤسسي', 'text_en' => 'Corporate account'],
+            ['group' => 'rate_cards', 'key' => 'corporate_account_help', 'text_ar' => 'اتركه فارغاً لتعريف بطاقة الأسعار الافتراضية لهذه الفئة.', 'text_en' => 'Leave empty to define the default rate card for this category.'],
+            ['group' => 'rate_cards', 'key' => 'default', 'text_ar' => 'افتراضي', 'text_en' => 'Default'],
+            ['group' => 'rate_cards', 'key' => 'name', 'text_ar' => 'الاسم', 'text_en' => 'Name'],
+            ['group' => 'rate_cards', 'key' => 'hourly_rate', 'text_ar' => 'سعر الساعة', 'text_en' => 'Hourly rate'],
+            ['group' => 'rate_cards', 'key' => 'daily_rate', 'text_ar' => 'سعر اليوم', 'text_en' => 'Daily rate'],
+            ['group' => 'rate_cards', 'key' => 'weekly_rate', 'text_ar' => 'سعر الأسبوع', 'text_en' => 'Weekly rate'],
+            ['group' => 'rate_cards', 'key' => 'monthly_rate', 'text_ar' => 'سعر الشهر', 'text_en' => 'Monthly rate'],
+            ['group' => 'rate_cards', 'key' => 'included_km_per_day', 'text_ar' => 'الكيلومترات المشمولة يومياً', 'text_en' => 'Included km/day'],
+            ['group' => 'rate_cards', 'key' => 'extra_km_rate', 'text_ar' => 'سعر الكيلومتر الإضافي', 'text_en' => 'Extra km rate'],
+            ['group' => 'rate_cards', 'key' => 'extra_hour_rate', 'text_ar' => 'سعر الساعة الإضافية', 'text_en' => 'Extra hour rate'],
+            ['group' => 'rate_cards', 'key' => 'driver_daily_allowance', 'text_ar' => 'بدل السائق اليومي', 'text_en' => 'Driver daily allowance'],
+            ['group' => 'rate_cards', 'key' => 'cross_city_surcharge', 'text_ar' => 'رسوم التنقل بين المدن', 'text_en' => 'Cross-city surcharge'],
+            ['group' => 'rate_cards', 'key' => 'effective_from', 'text_ar' => 'ساري من', 'text_en' => 'Effective from'],
+            ['group' => 'rate_cards', 'key' => 'effective_to', 'text_ar' => 'ساري حتى', 'text_en' => 'Effective to'],
+            ['group' => 'rate_cards', 'key' => 'is_active', 'text_ar' => 'نشطة', 'text_en' => 'Active'],
+
+            // Quotations field labels
+            ['group' => 'quotations', 'key' => 'quotation_number', 'text_ar' => 'رقم العرض', 'text_en' => 'Quotation #'],
+            ['group' => 'quotations', 'key' => 'customer', 'text_ar' => 'العميل', 'text_en' => 'Customer'],
+            ['group' => 'quotations', 'key' => 'corporate_account', 'text_ar' => 'الحساب المؤسسي', 'text_en' => 'Corporate account'],
+            ['group' => 'quotations', 'key' => 'category', 'text_ar' => 'فئة السيارة', 'text_en' => 'Car category'],
+            ['group' => 'quotations', 'key' => 'pickup_at', 'text_ar' => 'تاريخ الاستلام', 'text_en' => 'Pickup at'],
+            ['group' => 'quotations', 'key' => 'dropoff_at', 'text_ar' => 'تاريخ التسليم', 'text_en' => 'Drop-off at'],
+            ['group' => 'quotations', 'key' => 'pickup_location', 'text_ar' => 'مكان الاستلام', 'text_en' => 'Pickup location'],
+            ['group' => 'quotations', 'key' => 'dropoff_location', 'text_ar' => 'مكان التسليم', 'text_en' => 'Drop-off location'],
+            ['group' => 'quotations', 'key' => 'estimated_distance_km', 'text_ar' => 'المسافة التقديرية', 'text_en' => 'Estimated distance'],
+            ['group' => 'quotations', 'key' => 'rate_card', 'text_ar' => 'بطاقة الأسعار', 'text_en' => 'Rate card'],
+            ['group' => 'quotations', 'key' => 'rate_card_help', 'text_ar' => 'اتركه فارغاً لاختيار البطاقة المناسبة تلقائياً بناءً على الفئة والحساب المؤسسي.', 'text_en' => 'Leave blank to auto-pick based on category and corporate account.'],
+            ['group' => 'quotations', 'key' => 'subtotal', 'text_ar' => 'المجموع الفرعي', 'text_en' => 'Subtotal'],
+            ['group' => 'quotations', 'key' => 'vat_amount', 'text_ar' => 'ضريبة القيمة المضافة', 'text_en' => 'VAT'],
+            ['group' => 'quotations', 'key' => 'total_amount', 'text_ar' => 'الإجمالي', 'text_en' => 'Total'],
+            ['group' => 'quotations', 'key' => 'valid_until', 'text_ar' => 'صالح حتى', 'text_en' => 'Valid until'],
+            ['group' => 'quotations', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
+            ['group' => 'quotations', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
+            ['group' => 'quotations', 'key' => 'terms_and_conditions', 'text_ar' => 'الشروط والأحكام', 'text_en' => 'Terms and conditions'],
+
+            // Quotations form tabs + actions
+            ['group' => 'quotations', 'key' => 'tabs.customer_trip', 'text_ar' => 'العميل والرحلة', 'text_en' => 'Customer & Trip'],
+            ['group' => 'quotations', 'key' => 'tabs.pricing', 'text_ar' => 'التسعير', 'text_en' => 'Pricing'],
+            ['group' => 'quotations', 'key' => 'tabs.notes', 'text_ar' => 'الملاحظات والشروط', 'text_en' => 'Notes & Terms'],
+            ['group' => 'quotations', 'key' => 'pricing_help', 'text_ar' => 'يتم احتساب السعر تلقائياً عند الحفظ من خلال PricingService بناءً على الفئة وفترة الإيجار والمسافة.', 'text_en' => 'Pricing is auto-computed on save by PricingService from category, duration, and distance.'],
+            ['group' => 'quotations', 'key' => 'download_pdf', 'text_ar' => 'تحميل PDF', 'text_en' => 'Download PDF'],
+            ['group' => 'quotations', 'key' => 'send', 'text_ar' => 'إرسال للعميل', 'text_en' => 'Send to customer'],
+            ['group' => 'quotations', 'key' => 'send_stub_notice', 'text_ar' => 'في المرحلة 4 يتم تغيير الحالة إلى مُرسل وعرض رابط الواتساب. سيتم ربط الواتساب والبريد بالكامل في المرحلة 9.', 'text_en' => 'For Phase 4 this marks the quote as sent and shows the WhatsApp deep-link. Phase 9 wires real WhatsApp + email delivery.'],
+            ['group' => 'quotations', 'key' => 'send_stub_title', 'text_ar' => 'تم وضع علامة "مُرسل"', 'text_en' => 'Marked as sent'],
+            ['group' => 'quotations', 'key' => 'send_no_channel', 'text_ar' => 'لا توجد قناة اتصال متاحة للعميل.', 'text_en' => 'No contact channel available for this customer.'],
         ];
 
         foreach ($rows as $row) {
