@@ -1,19 +1,20 @@
 <?php
 
-namespace Tests\Feature;
+declare(strict_types=1);
 
-// use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+it('boots and uses the Adly Group Agency app name', function () {
+    expect(config('app.name'))->toBe('Adly Group Agency');
+});
 
-class ExampleTest extends TestCase
-{
-    /**
-     * A basic test example.
-     */
-    public function test_the_application_returns_a_successful_response(): void
-    {
-        $response = $this->get('/');
+it('uses Africa/Cairo timezone', function () {
+    expect(config('app.timezone'))->toBe('Africa/Cairo');
+});
 
-        $response->assertStatus(200);
-    }
-}
+it('defaults to Arabic locale with English fallback', function () {
+    expect(config('app.locale'))->toBe('ar')
+        ->and(config('app.fallback_locale'))->toBe('en');
+});
+
+it('uses the mysql database driver (MariaDB locally, MySQL/MariaDB in prod)', function () {
+    expect(config('database.default'))->toBe('mysql');
+});

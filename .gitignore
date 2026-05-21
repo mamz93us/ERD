@@ -8,7 +8,9 @@
 /vendor
 .env
 .env.backup
+.env.local
 .env.production
+.env.testing
 .phpactor.json
 .phpunit.result.cache
 Homestead.json
@@ -16,6 +18,7 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /auth.json
+/.claude/
 /.fleet
 /.idea
 /.nova
