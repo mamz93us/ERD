@@ -631,6 +631,66 @@ class TranslationSeeder extends Seeder
             ['group' => 'trip_schedule', 'key' => 'legend_active', 'text_ar' => 'جارية', 'text_en' => 'Active'],
             ['group' => 'trip_schedule', 'key' => 'legend_completed', 'text_ar' => 'مكتملة', 'text_en' => 'Completed'],
             ['group' => 'trip_schedule', 'key' => 'legend_cancelled', 'text_ar' => 'ملغاة', 'text_en' => 'Cancelled'],
+
+            // Phase 7 navigation
+            ['group' => 'navigation', 'key' => 'compliance', 'text_ar' => 'الامتثال', 'text_en' => 'Compliance'],
+            ['group' => 'navigation', 'key' => 'traffic_fines', 'text_ar' => 'المخالفات المرورية', 'text_en' => 'Traffic Fines'],
+            ['group' => 'navigation', 'key' => 'insurance_claims', 'text_ar' => 'مطالبات التأمين', 'text_en' => 'Insurance Claims'],
+
+            // TrafficFinePaymentStatus
+            ['group' => 'enums', 'key' => 'traffic_fine_payment_status.unpaid', 'text_ar' => 'غير مدفوعة', 'text_en' => 'Unpaid'],
+            ['group' => 'enums', 'key' => 'traffic_fine_payment_status.paid', 'text_ar' => 'مدفوعة', 'text_en' => 'Paid'],
+            ['group' => 'enums', 'key' => 'traffic_fine_payment_status.disputed', 'text_ar' => 'متنازع عليها', 'text_en' => 'Disputed'],
+            ['group' => 'enums', 'key' => 'traffic_fine_payment_status.waived', 'text_ar' => 'مُعفى منها', 'text_en' => 'Waived'],
+
+            // InsuranceClaimStatus
+            ['group' => 'enums', 'key' => 'insurance_claim_status.reported', 'text_ar' => 'مُبلغ عنها', 'text_en' => 'Reported'],
+            ['group' => 'enums', 'key' => 'insurance_claim_status.submitted', 'text_ar' => 'مُقدمة', 'text_en' => 'Submitted'],
+            ['group' => 'enums', 'key' => 'insurance_claim_status.under_review', 'text_ar' => 'تحت المراجعة', 'text_en' => 'Under review'],
+            ['group' => 'enums', 'key' => 'insurance_claim_status.approved', 'text_ar' => 'مُعتمدة', 'text_en' => 'Approved'],
+            ['group' => 'enums', 'key' => 'insurance_claim_status.rejected', 'text_ar' => 'مرفوضة', 'text_en' => 'Rejected'],
+            ['group' => 'enums', 'key' => 'insurance_claim_status.paid', 'text_ar' => 'مدفوعة', 'text_en' => 'Paid'],
+
+            // TrafficFines field labels
+            ['group' => 'traffic_fines', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'traffic_fines', 'key' => 'trip', 'text_ar' => 'الرحلة', 'text_en' => 'Trip'],
+            ['group' => 'traffic_fines', 'key' => 'trip_help', 'text_ar' => 'اتركه فارغاً ليتم ربطه تلقائياً بالرحلة النشطة في وقت المخالفة.', 'text_en' => 'Leave empty to auto-attribute to the trip active at the violation time.'],
+            ['group' => 'traffic_fines', 'key' => 'driver', 'text_ar' => 'السائق', 'text_en' => 'Driver'],
+            ['group' => 'traffic_fines', 'key' => 'violation_number', 'text_ar' => 'رقم المخالفة', 'text_en' => 'Violation #'],
+            ['group' => 'traffic_fines', 'key' => 'violation_date', 'text_ar' => 'تاريخ المخالفة', 'text_en' => 'Violation date'],
+            ['group' => 'traffic_fines', 'key' => 'violation_date_help', 'text_ar' => 'يُستخدم لربط المخالفة بالرحلة النشطة في ذلك الوقت.', 'text_en' => 'Used to attribute the fine to whichever trip was active at that moment.'],
+            ['group' => 'traffic_fines', 'key' => 'violation_type', 'text_ar' => 'نوع المخالفة', 'text_en' => 'Violation type'],
+            ['group' => 'traffic_fines', 'key' => 'location', 'text_ar' => 'الموقع', 'text_en' => 'Location'],
+            ['group' => 'traffic_fines', 'key' => 'amount', 'text_ar' => 'القيمة', 'text_en' => 'Amount'],
+            ['group' => 'traffic_fines', 'key' => 'payment_status', 'text_ar' => 'حالة السداد', 'text_en' => 'Payment status'],
+            ['group' => 'traffic_fines', 'key' => 'paid_date', 'text_ar' => 'تاريخ السداد', 'text_en' => 'Paid date'],
+            ['group' => 'traffic_fines', 'key' => 'paid_amount', 'text_ar' => 'المبلغ المدفوع', 'text_en' => 'Paid amount'],
+            ['group' => 'traffic_fines', 'key' => 'deducted_from_driver', 'text_ar' => 'خُصمت من السائق', 'text_en' => 'Deducted from driver'],
+            ['group' => 'traffic_fines', 'key' => 'deducted_from_driver_help', 'text_ar' => 'إذا تم وضع علامة، تُخصم القيمة من راتب السائق في المرحلة 10.', 'text_en' => 'When ticked, the amount is deducted from the driver\'s payroll in Phase 10.'],
+            ['group' => 'traffic_fines', 'key' => 'attachment', 'text_ar' => 'المرفق', 'text_en' => 'Attachment'],
+            ['group' => 'traffic_fines', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
+            ['group' => 'traffic_fines', 'key' => 'unattributed', 'text_ar' => 'بدون ربط', 'text_en' => 'Unattributed'],
+            ['group' => 'traffic_fines', 'key' => 'attribution_note', 'text_ar' => 'سيتم ربط هذه المخالفة تلقائياً بالرحلة النشطة على هذه السيارة في وقت المخالفة (إن وُجدت).', 'text_en' => 'This fine will auto-attribute to the trip active on this car at the violation time (if any).'],
+            ['group' => 'traffic_fines', 'key' => 'deduct_action', 'text_ar' => 'خصم من راتب السائق', 'text_en' => 'Deduct from driver payroll'],
+            ['group' => 'traffic_fines', 'key' => 'deduct_action_confirm', 'text_ar' => 'سيتم وضع علامة على المخالفة كمخصومة من السائق. يمكن التراجع لاحقاً.', 'text_en' => 'The fine will be marked as deducted from the driver. Can be undone later.'],
+            ['group' => 'traffic_fines', 'key' => 'deduct_action_done', 'text_ar' => 'تم تسجيل الخصم', 'text_en' => 'Deduction recorded'],
+            ['group' => 'traffic_fines', 'key' => 'deduct_action_done_body', 'text_ar' => 'سيتم خصم :amount EGP من راتب :driver في الدورة القادمة.', 'text_en' => ':amount EGP will be deducted from :driver\'s next payroll cycle.'],
+            ['group' => 'traffic_fines', 'key' => 'undo_deduct_action', 'text_ar' => 'إلغاء الخصم', 'text_en' => 'Undo deduction'],
+            ['group' => 'traffic_fines', 'key' => 'undo_deduct_done', 'text_ar' => 'تم إلغاء الخصم', 'text_en' => 'Deduction undone'],
+
+            // InsuranceClaims field labels
+            ['group' => 'insurance_claims', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'insurance_claims', 'key' => 'trip', 'text_ar' => 'الرحلة', 'text_en' => 'Trip'],
+            ['group' => 'insurance_claims', 'key' => 'claim_number', 'text_ar' => 'رقم المطالبة', 'text_en' => 'Claim #'],
+            ['group' => 'insurance_claims', 'key' => 'incident_date', 'text_ar' => 'تاريخ الحادث', 'text_en' => 'Incident date'],
+            ['group' => 'insurance_claims', 'key' => 'incident_location', 'text_ar' => 'موقع الحادث', 'text_en' => 'Incident location'],
+            ['group' => 'insurance_claims', 'key' => 'description', 'text_ar' => 'الوصف', 'text_en' => 'Description'],
+            ['group' => 'insurance_claims', 'key' => 'police_report_number', 'text_ar' => 'رقم محضر الشرطة', 'text_en' => 'Police report #'],
+            ['group' => 'insurance_claims', 'key' => 'claim_amount', 'text_ar' => 'قيمة المطالبة', 'text_en' => 'Claim amount'],
+            ['group' => 'insurance_claims', 'key' => 'payout_amount', 'text_ar' => 'المبلغ المسدد', 'text_en' => 'Payout amount'],
+            ['group' => 'insurance_claims', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
+            ['group' => 'insurance_claims', 'key' => 'documents', 'text_ar' => 'المستندات', 'text_en' => 'Documents'],
+            ['group' => 'insurance_claims', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
         ];
 
         foreach ($rows as $row) {
