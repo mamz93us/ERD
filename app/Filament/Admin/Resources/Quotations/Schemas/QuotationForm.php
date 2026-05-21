@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Filament\Admin\Resources\Quotations\Schemas;
 
+use App\Enums\EgyptianGovernorate;
 use App\Enums\QuotationStatus;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Placeholder;
@@ -44,15 +45,18 @@ class QuotationForm
                 ->label(__('quotations.customer'))
                 ->relationship('customer', 'full_name')
                 ->searchable()
+                ->preload()
                 ->required(),
             Select::make('corporate_account_id')
                 ->label(__('quotations.corporate_account'))
                 ->relationship('corporateAccount', 'company_name')
                 ->searchable()
+                ->preload()
                 ->nullable(),
             Select::make('category_id')
                 ->label(__('quotations.category'))
                 ->relationship('category', 'name')
+                ->preload()
                 ->required(),
             DateTimePicker::make('pickup_at')
                 ->label(__('quotations.pickup_at'))
@@ -63,14 +67,17 @@ class QuotationForm
                 ->required()
                 ->after('pickup_at')
                 ->seconds(false),
-            TextInput::make('pickup_location')
+            Select::make('pickup_location')
                 ->label(__('quotations.pickup_location'))
+                ->options(EgyptianGovernorate::class)
+                ->searchable()
                 ->required()
-                ->maxLength(255),
-            TextInput::make('dropoff_location')
+                ->helperText(__('quotations.governorate_help')),
+            Select::make('dropoff_location')
                 ->label(__('quotations.dropoff_location'))
-                ->required()
-                ->maxLength(255),
+                ->options(EgyptianGovernorate::class)
+                ->searchable()
+                ->required(),
             TextInput::make('estimated_distance_km')
                 ->label(__('quotations.estimated_distance_km'))
                 ->numeric()
@@ -91,6 +98,7 @@ class QuotationForm
                 ->label(__('quotations.rate_card'))
                 ->relationship('rateCard', 'name')
                 ->searchable()
+                ->preload()
                 ->nullable()
                 ->helperText(__('quotations.rate_card_help')),
             TextInput::make('subtotal')

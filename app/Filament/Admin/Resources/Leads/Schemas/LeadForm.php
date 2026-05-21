@@ -21,11 +21,13 @@ class LeadForm
                 ->label(__('leads.customer'))
                 ->relationship('customer', 'full_name')
                 ->searchable()
+                ->preload()
                 ->nullable(),
             Select::make('assigned_user_id')
                 ->label(__('leads.assigned_user'))
                 ->relationship('assignedUser', 'full_name')
                 ->searchable()
+                ->preload()
                 ->nullable(),
             Select::make('source')
                 ->label(__('leads.source'))

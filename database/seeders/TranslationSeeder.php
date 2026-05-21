@@ -510,6 +510,39 @@ class TranslationSeeder extends Seeder
             ['group' => 'trip_damage_reports', 'key' => 'charged_to_customer', 'text_ar' => 'يُحمَّل على العميل', 'text_en' => 'Charged to customer'],
             ['group' => 'trip_damage_reports', 'key' => 'customer_charge_amount', 'text_ar' => 'مبلغ تحميل العميل', 'text_en' => 'Customer charge amount'],
             ['group' => 'trip_damage_reports', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
+
+            // Quotation + Trip governorate-related help text
+            ['group' => 'quotations', 'key' => 'governorate_help', 'text_ar' => 'اختر المحافظة. إذا اختلفت محافظة الاستلام عن التسليم تُضاف رسوم التنقل بين المحافظات تلقائياً.', 'text_en' => 'Select the governorate. A cross-city surcharge is applied automatically when pickup ≠ dropoff governorate.'],
+            ['group' => 'trips', 'key' => 'governorate_help', 'text_ar' => 'اختر المحافظة. إذا اختلفت محافظة الاستلام عن التسليم تُضاف رسوم التنقل بين المحافظات تلقائياً.', 'text_en' => 'Select the governorate. A cross-city surcharge is applied automatically when pickup ≠ dropoff governorate.'],
+
+            // 27 Egyptian governorates
+            ['group' => 'enums', 'key' => 'egyptian_governorate.alexandria', 'text_ar' => 'الإسكندرية', 'text_en' => 'Alexandria'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.aswan', 'text_ar' => 'أسوان', 'text_en' => 'Aswan'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.asyut', 'text_ar' => 'أسيوط', 'text_en' => 'Asyut'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.beheira', 'text_ar' => 'البحيرة', 'text_en' => 'Beheira'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.beni_suef', 'text_ar' => 'بني سويف', 'text_en' => 'Beni Suef'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.cairo', 'text_ar' => 'القاهرة', 'text_en' => 'Cairo'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.dakahlia', 'text_ar' => 'الدقهلية', 'text_en' => 'Dakahlia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.damietta', 'text_ar' => 'دمياط', 'text_en' => 'Damietta'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.faiyum', 'text_ar' => 'الفيوم', 'text_en' => 'Faiyum'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.gharbia', 'text_ar' => 'الغربية', 'text_en' => 'Gharbia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.giza', 'text_ar' => 'الجيزة', 'text_en' => 'Giza'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.ismailia', 'text_ar' => 'الإسماعيلية', 'text_en' => 'Ismailia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.kafr_el_sheikh', 'text_ar' => 'كفر الشيخ', 'text_en' => 'Kafr el-Sheikh'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.luxor', 'text_ar' => 'الأقصر', 'text_en' => 'Luxor'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.matrouh', 'text_ar' => 'مطروح', 'text_en' => 'Matrouh'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.minya', 'text_ar' => 'المنيا', 'text_en' => 'Minya'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.monufia', 'text_ar' => 'المنوفية', 'text_en' => 'Monufia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.new_valley', 'text_ar' => 'الوادي الجديد', 'text_en' => 'New Valley'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.north_sinai', 'text_ar' => 'شمال سيناء', 'text_en' => 'North Sinai'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.port_said', 'text_ar' => 'بورسعيد', 'text_en' => 'Port Said'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.qalyubia', 'text_ar' => 'القليوبية', 'text_en' => 'Qalyubia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.qena', 'text_ar' => 'قنا', 'text_en' => 'Qena'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.red_sea', 'text_ar' => 'البحر الأحمر', 'text_en' => 'Red Sea'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.sharqia', 'text_ar' => 'الشرقية', 'text_en' => 'Sharqia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.sohag', 'text_ar' => 'سوهاج', 'text_en' => 'Sohag'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.south_sinai', 'text_ar' => 'جنوب سيناء', 'text_en' => 'South Sinai'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.suez', 'text_ar' => 'السويس', 'text_en' => 'Suez'],
         ];
 
         foreach ($rows as $row) {

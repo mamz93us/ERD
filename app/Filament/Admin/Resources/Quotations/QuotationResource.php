@@ -84,6 +84,15 @@ class QuotationResource extends Resource
         $corporateId = $data['corporate_account_id']
             ?? Customer::query()->whereKey($data['customer_id'] ?? null)->value('corporate_account_id');
 
+        // Auto-detect inter-city trips from the governorate selects so PricingService
+        // adds the rate card's cross_city_surcharge when pickup ≠ dropoff governorate.
+        $surchargeFlags = [];
+        if (filled($data['pickup_location'] ?? null)
+            && filled($data['dropoff_location'] ?? null)
+            && $data['pickup_location'] !== $data['dropoff_location']) {
+            $surchargeFlags[] = 'cross_city';
+        }
+
         try {
             $result = app(PricingService::class)->calculate(
                 categoryId: $data['category_id'],
@@ -91,6 +100,7 @@ class QuotationResource extends Resource
                 start: CarbonImmutable::parse($data['pickup_at']),
                 end: CarbonImmutable::parse($data['dropoff_at']),
                 estimatedKm: (int) ($data['estimated_distance_km'] ?? 0),
+                surchargeFlags: $surchargeFlags,
             );
         } catch (\Throwable) {
             return $data;
