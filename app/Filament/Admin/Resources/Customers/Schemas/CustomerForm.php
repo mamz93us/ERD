@@ -21,6 +21,7 @@ class CustomerForm
                 ->label(__('customers.corporate_account'))
                 ->relationship('corporateAccount', 'company_name')
                 ->searchable()
+                ->preload()
                 ->nullable(),
             Select::make('type')
                 ->label(__('customers.type'))

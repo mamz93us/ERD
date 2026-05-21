@@ -4,11 +4,8 @@ declare(strict_types=1);
 
 namespace App\Filament\Admin\Resources\Trips\Schemas;
 
+use App\Enums\EgyptianGovernorate;
 use App\Enums\TripStatus;
-use App\Models\Branch;
-use App\Models\Car;
-use App\Models\Driver;
-use App\Models\RateCard;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -45,33 +42,40 @@ class TripForm
         return [
             Select::make('branch_id')
                 ->label(__('trips.branch'))
-                ->options(fn () => Branch::query()->pluck('code', 'id'))
+                ->relationship('branch', 'code')
+                ->searchable()
+                ->preload()
                 ->required(),
             Select::make('customer_id')
                 ->label(__('trips.customer'))
                 ->relationship('customer', 'full_name')
                 ->searchable()
+                ->preload()
                 ->required(),
             Select::make('corporate_account_id')
                 ->label(__('trips.corporate_account'))
                 ->relationship('corporateAccount', 'company_name')
                 ->searchable()
+                ->preload()
                 ->nullable(),
             Select::make('car_id')
                 ->label(__('trips.car'))
-                ->options(fn () => Car::query()->pluck('plate', 'id'))
+                ->relationship('car', 'plate')
                 ->searchable()
+                ->preload()
                 ->required(),
             Select::make('driver_id')
                 ->label(__('trips.driver'))
-                ->options(fn () => Driver::query()->pluck('full_name', 'id'))
+                ->relationship('driver', 'full_name')
                 ->searchable()
+                ->preload()
                 ->required()
                 ->helperText(__('trips.driver_help')),
             Select::make('rate_card_id')
                 ->label(__('trips.rate_card'))
-                ->options(fn () => RateCard::query()->pluck('name', 'id'))
+                ->relationship('rateCard', 'name')
                 ->searchable()
+                ->preload()
                 ->required(),
             DateTimePicker::make('scheduled_start')
                 ->label(__('trips.scheduled_start'))
@@ -82,14 +86,17 @@ class TripForm
                 ->required()
                 ->after('scheduled_start')
                 ->seconds(false),
-            TextInput::make('pickup_location')
+            Select::make('pickup_location')
                 ->label(__('trips.pickup_location'))
+                ->options(EgyptianGovernorate::class)
+                ->searchable()
                 ->required()
-                ->maxLength(255),
-            TextInput::make('dropoff_location')
+                ->helperText(__('trips.governorate_help')),
+            Select::make('dropoff_location')
                 ->label(__('trips.dropoff_location'))
-                ->required()
-                ->maxLength(255),
+                ->options(EgyptianGovernorate::class)
+                ->searchable()
+                ->required(),
             Select::make('status')
                 ->label(__('trips.status'))
                 ->options(TripStatus::class)

@@ -21,11 +21,13 @@ class SubRentalContractForm
                 ->label(__('sub_rental_contracts.partner_agency'))
                 ->relationship('partnerAgency', 'name')
                 ->searchable()
+                ->preload()
                 ->required(),
             Select::make('car_id')
                 ->label(__('sub_rental_contracts.car'))
                 ->relationship('car', 'plate')
                 ->searchable()
+                ->preload()
                 ->required(),
             DatePicker::make('start_date')
                 ->label(__('sub_rental_contracts.start_date'))

@@ -510,6 +510,111 @@ class TranslationSeeder extends Seeder
             ['group' => 'trip_damage_reports', 'key' => 'charged_to_customer', 'text_ar' => 'يُحمَّل على العميل', 'text_en' => 'Charged to customer'],
             ['group' => 'trip_damage_reports', 'key' => 'customer_charge_amount', 'text_ar' => 'مبلغ تحميل العميل', 'text_en' => 'Customer charge amount'],
             ['group' => 'trip_damage_reports', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
+
+            // Quotation + Trip governorate-related help text
+            ['group' => 'quotations', 'key' => 'governorate_help', 'text_ar' => 'اختر المحافظة. إذا اختلفت محافظة الاستلام عن التسليم تُضاف رسوم التنقل بين المحافظات تلقائياً.', 'text_en' => 'Select the governorate. A cross-city surcharge is applied automatically when pickup ≠ dropoff governorate.'],
+            ['group' => 'trips', 'key' => 'governorate_help', 'text_ar' => 'اختر المحافظة. إذا اختلفت محافظة الاستلام عن التسليم تُضاف رسوم التنقل بين المحافظات تلقائياً.', 'text_en' => 'Select the governorate. A cross-city surcharge is applied automatically when pickup ≠ dropoff governorate.'],
+
+            // 27 Egyptian governorates
+            ['group' => 'enums', 'key' => 'egyptian_governorate.alexandria', 'text_ar' => 'الإسكندرية', 'text_en' => 'Alexandria'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.aswan', 'text_ar' => 'أسوان', 'text_en' => 'Aswan'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.asyut', 'text_ar' => 'أسيوط', 'text_en' => 'Asyut'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.beheira', 'text_ar' => 'البحيرة', 'text_en' => 'Beheira'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.beni_suef', 'text_ar' => 'بني سويف', 'text_en' => 'Beni Suef'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.cairo', 'text_ar' => 'القاهرة', 'text_en' => 'Cairo'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.dakahlia', 'text_ar' => 'الدقهلية', 'text_en' => 'Dakahlia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.damietta', 'text_ar' => 'دمياط', 'text_en' => 'Damietta'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.faiyum', 'text_ar' => 'الفيوم', 'text_en' => 'Faiyum'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.gharbia', 'text_ar' => 'الغربية', 'text_en' => 'Gharbia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.giza', 'text_ar' => 'الجيزة', 'text_en' => 'Giza'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.ismailia', 'text_ar' => 'الإسماعيلية', 'text_en' => 'Ismailia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.kafr_el_sheikh', 'text_ar' => 'كفر الشيخ', 'text_en' => 'Kafr el-Sheikh'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.luxor', 'text_ar' => 'الأقصر', 'text_en' => 'Luxor'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.matrouh', 'text_ar' => 'مطروح', 'text_en' => 'Matrouh'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.minya', 'text_ar' => 'المنيا', 'text_en' => 'Minya'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.monufia', 'text_ar' => 'المنوفية', 'text_en' => 'Monufia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.new_valley', 'text_ar' => 'الوادي الجديد', 'text_en' => 'New Valley'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.north_sinai', 'text_ar' => 'شمال سيناء', 'text_en' => 'North Sinai'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.port_said', 'text_ar' => 'بورسعيد', 'text_en' => 'Port Said'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.qalyubia', 'text_ar' => 'القليوبية', 'text_en' => 'Qalyubia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.qena', 'text_ar' => 'قنا', 'text_en' => 'Qena'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.red_sea', 'text_ar' => 'البحر الأحمر', 'text_en' => 'Red Sea'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.sharqia', 'text_ar' => 'الشرقية', 'text_en' => 'Sharqia'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.sohag', 'text_ar' => 'سوهاج', 'text_en' => 'Sohag'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.south_sinai', 'text_ar' => 'جنوب سيناء', 'text_en' => 'South Sinai'],
+            ['group' => 'enums', 'key' => 'egyptian_governorate.suez', 'text_ar' => 'السويس', 'text_en' => 'Suez'],
+
+            // Phase 6 navigation
+            ['group' => 'navigation', 'key' => 'maintenance', 'text_ar' => 'الصيانة', 'text_en' => 'Maintenance'],
+            ['group' => 'navigation', 'key' => 'maintenance_schedules', 'text_ar' => 'جداول الصيانة', 'text_en' => 'Maintenance Schedules'],
+            ['group' => 'navigation', 'key' => 'maintenance_orders', 'text_ar' => 'أوامر الصيانة', 'text_en' => 'Maintenance Orders'],
+
+            // MaintenanceServiceType
+            ['group' => 'enums', 'key' => 'maintenance_service_type.oil_change', 'text_ar' => 'تغيير الزيت', 'text_en' => 'Oil change'],
+            ['group' => 'enums', 'key' => 'maintenance_service_type.tire_rotation', 'text_ar' => 'تدوير الإطارات', 'text_en' => 'Tire rotation'],
+            ['group' => 'enums', 'key' => 'maintenance_service_type.brake_inspection', 'text_ar' => 'فحص الفرامل', 'text_en' => 'Brake inspection'],
+            ['group' => 'enums', 'key' => 'maintenance_service_type.major_service', 'text_ar' => 'صيانة شاملة', 'text_en' => 'Major service'],
+            ['group' => 'enums', 'key' => 'maintenance_service_type.ac_service', 'text_ar' => 'صيانة التكييف', 'text_en' => 'A/C service'],
+            ['group' => 'enums', 'key' => 'maintenance_service_type.battery_check', 'text_ar' => 'فحص البطارية', 'text_en' => 'Battery check'],
+            ['group' => 'enums', 'key' => 'maintenance_service_type.other', 'text_ar' => 'أخرى', 'text_en' => 'Other'],
+
+            // MaintenanceOrderType
+            ['group' => 'enums', 'key' => 'maintenance_order_type.preventive', 'text_ar' => 'وقائية', 'text_en' => 'Preventive'],
+            ['group' => 'enums', 'key' => 'maintenance_order_type.corrective', 'text_ar' => 'تصحيحية', 'text_en' => 'Corrective'],
+            ['group' => 'enums', 'key' => 'maintenance_order_type.accident_repair', 'text_ar' => 'إصلاح حادث', 'text_en' => 'Accident repair'],
+
+            // MaintenanceOrderStatus
+            ['group' => 'enums', 'key' => 'maintenance_order_status.scheduled', 'text_ar' => 'مجدولة', 'text_en' => 'Scheduled'],
+            ['group' => 'enums', 'key' => 'maintenance_order_status.in_service', 'text_ar' => 'في الخدمة', 'text_en' => 'In service'],
+            ['group' => 'enums', 'key' => 'maintenance_order_status.completed', 'text_ar' => 'مكتملة', 'text_en' => 'Completed'],
+            ['group' => 'enums', 'key' => 'maintenance_order_status.cancelled', 'text_ar' => 'ملغاة', 'text_en' => 'Cancelled'],
+
+            // MaintenanceItemType
+            ['group' => 'enums', 'key' => 'maintenance_item_type.part', 'text_ar' => 'قطعة غيار', 'text_en' => 'Part'],
+            ['group' => 'enums', 'key' => 'maintenance_item_type.labor', 'text_ar' => 'أجرة عمل', 'text_en' => 'Labor'],
+            ['group' => 'enums', 'key' => 'maintenance_item_type.consumable', 'text_ar' => 'مستهلكات', 'text_en' => 'Consumable'],
+
+            // MaintenanceSchedules field labels
+            ['group' => 'maintenance_schedules', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'maintenance_schedules', 'key' => 'service_type', 'text_ar' => 'نوع الخدمة', 'text_en' => 'Service type'],
+            ['group' => 'maintenance_schedules', 'key' => 'interval_km', 'text_ar' => 'فترة الكيلومترات', 'text_en' => 'Interval (km)'],
+            ['group' => 'maintenance_schedules', 'key' => 'interval_km_help', 'text_ar' => 'كل كم كيلومتر يحين موعد الخدمة', 'text_en' => 'Service every N km'],
+            ['group' => 'maintenance_schedules', 'key' => 'interval_days', 'text_ar' => 'فترة الأيام', 'text_en' => 'Interval (days)'],
+            ['group' => 'maintenance_schedules', 'key' => 'interval_days_help', 'text_ar' => 'كل كم يوم يحين موعد الخدمة', 'text_en' => 'Service every N days'],
+            ['group' => 'maintenance_schedules', 'key' => 'days_suffix', 'text_ar' => 'يوم', 'text_en' => 'days'],
+            ['group' => 'maintenance_schedules', 'key' => 'last_done_km', 'text_ar' => 'آخر صيانة (كم)', 'text_en' => 'Last done (km)'],
+            ['group' => 'maintenance_schedules', 'key' => 'last_done_date', 'text_ar' => 'تاريخ آخر صيانة', 'text_en' => 'Last done date'],
+            ['group' => 'maintenance_schedules', 'key' => 'last_done_help', 'text_ar' => 'يُحدَّث تلقائياً عند اكتمال أمر الصيانة', 'text_en' => 'Auto-updated when a maintenance order is completed'],
+            ['group' => 'maintenance_schedules', 'key' => 'next_due_km', 'text_ar' => 'الصيانة القادمة (كم)', 'text_en' => 'Next due (km)'],
+            ['group' => 'maintenance_schedules', 'key' => 'next_due_date', 'text_ar' => 'تاريخ الصيانة القادمة', 'text_en' => 'Next due date'],
+            ['group' => 'maintenance_schedules', 'key' => 'is_active', 'text_ar' => 'نشطة', 'text_en' => 'Active'],
+
+            // MaintenanceOrders field labels
+            ['group' => 'maintenance_orders', 'key' => 'order_number', 'text_ar' => 'رقم الأمر', 'text_en' => 'Order #'],
+            ['group' => 'maintenance_orders', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'maintenance_orders', 'key' => 'garage', 'text_ar' => 'الورشة', 'text_en' => 'Garage'],
+            ['group' => 'maintenance_orders', 'key' => 'order_type', 'text_ar' => 'نوع الأمر', 'text_en' => 'Order type'],
+            ['group' => 'maintenance_orders', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
+            ['group' => 'maintenance_orders', 'key' => 'status_help', 'text_ar' => 'تغيير الحالة إلى "في الخدمة" يُحوِّل السيارة إلى حالة "في الصيانة" تلقائياً.', 'text_en' => 'Changing status to "In service" auto-flips the car to "In maintenance".'],
+            ['group' => 'maintenance_orders', 'key' => 'scheduled_start', 'text_ar' => 'بداية مجدولة', 'text_en' => 'Scheduled start'],
+            ['group' => 'maintenance_orders', 'key' => 'scheduled_end', 'text_ar' => 'نهاية مجدولة', 'text_en' => 'Scheduled end'],
+            ['group' => 'maintenance_orders', 'key' => 'actual_start', 'text_ar' => 'بداية فعلية', 'text_en' => 'Actual start'],
+            ['group' => 'maintenance_orders', 'key' => 'actual_end', 'text_ar' => 'نهاية فعلية', 'text_en' => 'Actual end'],
+            ['group' => 'maintenance_orders', 'key' => 'odometer_at_service', 'text_ar' => 'العداد عند الخدمة', 'text_en' => 'Odometer at service'],
+            ['group' => 'maintenance_orders', 'key' => 'subtotal', 'text_ar' => 'المجموع الفرعي', 'text_en' => 'Subtotal'],
+            ['group' => 'maintenance_orders', 'key' => 'vat_amount', 'text_ar' => 'ضريبة القيمة المضافة', 'text_en' => 'VAT'],
+            ['group' => 'maintenance_orders', 'key' => 'total_cost', 'text_ar' => 'التكلفة الإجمالية', 'text_en' => 'Total cost'],
+            ['group' => 'maintenance_orders', 'key' => 'invoice_file', 'text_ar' => 'فاتورة الورشة', 'text_en' => 'Garage invoice'],
+            ['group' => 'maintenance_orders', 'key' => 'description', 'text_ar' => 'الوصف', 'text_en' => 'Description'],
+            ['group' => 'maintenance_orders', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
+
+            // MaintenanceItems field labels
+            ['group' => 'maintenance_items', 'key' => 'item_type', 'text_ar' => 'النوع', 'text_en' => 'Type'],
+            ['group' => 'maintenance_items', 'key' => 'description', 'text_ar' => 'الوصف', 'text_en' => 'Description'],
+            ['group' => 'maintenance_items', 'key' => 'quantity', 'text_ar' => 'الكمية', 'text_en' => 'Quantity'],
+            ['group' => 'maintenance_items', 'key' => 'unit_cost', 'text_ar' => 'تكلفة الوحدة', 'text_en' => 'Unit cost'],
+            ['group' => 'maintenance_items', 'key' => 'total_cost', 'text_ar' => 'الإجمالي', 'text_en' => 'Total'],
+            ['group' => 'maintenance_items', 'key' => 'total_cost_help', 'text_ar' => 'يُحسب تلقائياً كـ الكمية × تكلفة الوحدة', 'text_en' => 'Auto-computed as quantity × unit cost'],
         ];
 
         foreach ($rows as $row) {

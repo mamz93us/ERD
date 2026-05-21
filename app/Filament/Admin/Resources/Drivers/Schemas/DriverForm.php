@@ -21,6 +21,7 @@ class DriverForm
                 ->label(__('drivers.branch'))
                 ->relationship('branch', 'code')
                 ->searchable()
+                ->preload()
                 ->required(),
             TextInput::make('national_id')
                 ->label(__('drivers.national_id'))

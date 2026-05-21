@@ -23,6 +23,7 @@ class RateCardForm
                 ->label(__('rate_cards.corporate_account'))
                 ->relationship('corporateAccount', 'company_name')
                 ->searchable()
+                ->preload()
                 ->nullable()
                 ->helperText(__('rate_cards.corporate_account_help')),
             TextInput::make('name')
