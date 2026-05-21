@@ -392,6 +392,124 @@ class TranslationSeeder extends Seeder
             ['group' => 'quotations', 'key' => 'send_stub_notice', 'text_ar' => 'في المرحلة 4 يتم تغيير الحالة إلى مُرسل وعرض رابط الواتساب. سيتم ربط الواتساب والبريد بالكامل في المرحلة 9.', 'text_en' => 'For Phase 4 this marks the quote as sent and shows the WhatsApp deep-link. Phase 9 wires real WhatsApp + email delivery.'],
             ['group' => 'quotations', 'key' => 'send_stub_title', 'text_ar' => 'تم وضع علامة "مُرسل"', 'text_en' => 'Marked as sent'],
             ['group' => 'quotations', 'key' => 'send_no_channel', 'text_ar' => 'لا توجد قناة اتصال متاحة للعميل.', 'text_en' => 'No contact channel available for this customer.'],
+
+            // Phase 5 navigation
+            ['group' => 'navigation', 'key' => 'operations', 'text_ar' => 'العمليات', 'text_en' => 'Operations'],
+            ['group' => 'navigation', 'key' => 'trips', 'text_ar' => 'الرحلات', 'text_en' => 'Trips'],
+
+            // TripStatus
+            ['group' => 'enums', 'key' => 'trip_status.draft', 'text_ar' => 'مسودة', 'text_en' => 'Draft'],
+            ['group' => 'enums', 'key' => 'trip_status.confirmed', 'text_ar' => 'مؤكدة', 'text_en' => 'Confirmed'],
+            ['group' => 'enums', 'key' => 'trip_status.assigned', 'text_ar' => 'مُسندة', 'text_en' => 'Assigned'],
+            ['group' => 'enums', 'key' => 'trip_status.en_route', 'text_ar' => 'في الطريق', 'text_en' => 'En route'],
+            ['group' => 'enums', 'key' => 'trip_status.in_progress', 'text_ar' => 'جارية', 'text_en' => 'In progress'],
+            ['group' => 'enums', 'key' => 'trip_status.completed', 'text_ar' => 'مكتملة', 'text_en' => 'Completed'],
+            ['group' => 'enums', 'key' => 'trip_status.invoiced', 'text_ar' => 'صدرت فاتورتها', 'text_en' => 'Invoiced'],
+            ['group' => 'enums', 'key' => 'trip_status.closed', 'text_ar' => 'مُغلقة', 'text_en' => 'Closed'],
+            ['group' => 'enums', 'key' => 'trip_status.cancelled', 'text_ar' => 'ملغاة', 'text_en' => 'Cancelled'],
+            ['group' => 'enums', 'key' => 'trip_status.no_show', 'text_ar' => 'لم يحضر', 'text_en' => 'No show'],
+
+            // TripExpenseType
+            ['group' => 'enums', 'key' => 'trip_expense_type.fuel', 'text_ar' => 'وقود', 'text_en' => 'Fuel'],
+            ['group' => 'enums', 'key' => 'trip_expense_type.toll', 'text_ar' => 'رسوم طريق', 'text_en' => 'Toll'],
+            ['group' => 'enums', 'key' => 'trip_expense_type.parking', 'text_ar' => 'موقف', 'text_en' => 'Parking'],
+            ['group' => 'enums', 'key' => 'trip_expense_type.food', 'text_ar' => 'طعام', 'text_en' => 'Food'],
+            ['group' => 'enums', 'key' => 'trip_expense_type.accommodation', 'text_ar' => 'إقامة', 'text_en' => 'Accommodation'],
+            ['group' => 'enums', 'key' => 'trip_expense_type.misc', 'text_ar' => 'متفرقة', 'text_en' => 'Misc'],
+
+            // TripInspectionStage
+            ['group' => 'enums', 'key' => 'trip_inspection_stage.pickup', 'text_ar' => 'استلام', 'text_en' => 'Pickup'],
+            ['group' => 'enums', 'key' => 'trip_inspection_stage.return', 'text_ar' => 'إعادة', 'text_en' => 'Return'],
+
+            // FuelLevel
+            ['group' => 'enums', 'key' => 'fuel_level.empty', 'text_ar' => 'فارغ', 'text_en' => 'Empty'],
+            ['group' => 'enums', 'key' => 'fuel_level.quarter', 'text_ar' => 'ربع', 'text_en' => 'Quarter'],
+            ['group' => 'enums', 'key' => 'fuel_level.half', 'text_ar' => 'نصف', 'text_en' => 'Half'],
+            ['group' => 'enums', 'key' => 'fuel_level.three_quarter', 'text_ar' => 'ثلاثة أرباع', 'text_en' => 'Three quarter'],
+            ['group' => 'enums', 'key' => 'fuel_level.full', 'text_ar' => 'كامل', 'text_en' => 'Full'],
+
+            // TripDamageReportStatus
+            ['group' => 'enums', 'key' => 'trip_damage_report_status.reported', 'text_ar' => 'مُبلغ', 'text_en' => 'Reported'],
+            ['group' => 'enums', 'key' => 'trip_damage_report_status.approved', 'text_ar' => 'مُعتمد', 'text_en' => 'Approved'],
+            ['group' => 'enums', 'key' => 'trip_damage_report_status.repaired', 'text_ar' => 'مُصلح', 'text_en' => 'Repaired'],
+            ['group' => 'enums', 'key' => 'trip_damage_report_status.disputed', 'text_ar' => 'مُتنازع عليه', 'text_en' => 'Disputed'],
+
+            // DamageSeverity
+            ['group' => 'enums', 'key' => 'damage_severity.scratch', 'text_ar' => 'خدش', 'text_en' => 'Scratch'],
+            ['group' => 'enums', 'key' => 'damage_severity.dent', 'text_ar' => 'انبعاج', 'text_en' => 'Dent'],
+            ['group' => 'enums', 'key' => 'damage_severity.crack', 'text_ar' => 'شرخ', 'text_en' => 'Crack'],
+            ['group' => 'enums', 'key' => 'damage_severity.missing', 'text_ar' => 'مفقود', 'text_en' => 'Missing'],
+            ['group' => 'enums', 'key' => 'damage_severity.other', 'text_ar' => 'أخرى', 'text_en' => 'Other'],
+
+            // DamageSide
+            ['group' => 'enums', 'key' => 'damage_side.front_left', 'text_ar' => 'أمامي يسار', 'text_en' => 'Front left'],
+            ['group' => 'enums', 'key' => 'damage_side.front_right', 'text_ar' => 'أمامي يمين', 'text_en' => 'Front right'],
+            ['group' => 'enums', 'key' => 'damage_side.rear_left', 'text_ar' => 'خلفي يسار', 'text_en' => 'Rear left'],
+            ['group' => 'enums', 'key' => 'damage_side.rear_right', 'text_ar' => 'خلفي يمين', 'text_en' => 'Rear right'],
+            ['group' => 'enums', 'key' => 'damage_side.top', 'text_ar' => 'سقف', 'text_en' => 'Top'],
+            ['group' => 'enums', 'key' => 'damage_side.bottom', 'text_ar' => 'أسفل', 'text_en' => 'Bottom'],
+
+            // Trips field labels
+            ['group' => 'trips', 'key' => 'trip_number', 'text_ar' => 'رقم الرحلة', 'text_en' => 'Trip #'],
+            ['group' => 'trips', 'key' => 'branch', 'text_ar' => 'الفرع', 'text_en' => 'Branch'],
+            ['group' => 'trips', 'key' => 'customer', 'text_ar' => 'العميل', 'text_en' => 'Customer'],
+            ['group' => 'trips', 'key' => 'corporate_account', 'text_ar' => 'الحساب المؤسسي', 'text_en' => 'Corporate account'],
+            ['group' => 'trips', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'trips', 'key' => 'driver', 'text_ar' => 'السائق', 'text_en' => 'Driver'],
+            ['group' => 'trips', 'key' => 'driver_help', 'text_ar' => 'النموذج بسائق دائماً (chauffeur-driven). كل رحلة لها سائق.', 'text_en' => 'Chauffeur model — every trip has a driver.'],
+            ['group' => 'trips', 'key' => 'rate_card', 'text_ar' => 'بطاقة الأسعار', 'text_en' => 'Rate card'],
+            ['group' => 'trips', 'key' => 'scheduled_start', 'text_ar' => 'وقت البداية المجدول', 'text_en' => 'Scheduled start'],
+            ['group' => 'trips', 'key' => 'scheduled_end', 'text_ar' => 'وقت النهاية المجدول', 'text_en' => 'Scheduled end'],
+            ['group' => 'trips', 'key' => 'pickup_location', 'text_ar' => 'مكان الاستلام', 'text_en' => 'Pickup location'],
+            ['group' => 'trips', 'key' => 'dropoff_location', 'text_ar' => 'مكان التسليم', 'text_en' => 'Drop-off location'],
+            ['group' => 'trips', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
+            ['group' => 'trips', 'key' => 'status_help', 'text_ar' => 'استخدم الإجراءات في الأعلى لتغيير الحالة وفق قواعد الانتقال.', 'text_en' => 'Use header actions to transition status according to the lifecycle rules.'],
+            ['group' => 'trips', 'key' => 'cancellation_reason', 'text_ar' => 'سبب الإلغاء', 'text_en' => 'Cancellation reason'],
+            ['group' => 'trips', 'key' => 'subtotal', 'text_ar' => 'المجموع الفرعي', 'text_en' => 'Subtotal'],
+            ['group' => 'trips', 'key' => 'vat_amount', 'text_ar' => 'ضريبة القيمة المضافة', 'text_en' => 'VAT'],
+            ['group' => 'trips', 'key' => 'total_amount', 'text_ar' => 'الإجمالي', 'text_en' => 'Total'],
+            ['group' => 'trips', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
+
+            // Trips tabs + actions + booking-check messages
+            ['group' => 'trips', 'key' => 'tabs.booking', 'text_ar' => 'الحجز', 'text_en' => 'Booking'],
+            ['group' => 'trips', 'key' => 'tabs.pricing', 'text_ar' => 'التسعير', 'text_en' => 'Pricing'],
+            ['group' => 'trips', 'key' => 'tabs.notes', 'text_ar' => 'الملاحظات', 'text_en' => 'Notes'],
+            ['group' => 'trips', 'key' => 'move_to', 'text_ar' => 'انتقال إلى :status', 'text_en' => 'Move to :status'],
+            ['group' => 'trips', 'key' => 'status_changed', 'text_ar' => 'تم تغيير الحالة', 'text_en' => 'Status changed'],
+            ['group' => 'trips', 'key' => 'status_change_failed', 'text_ar' => 'فشل تغيير الحالة', 'text_en' => 'Status change failed'],
+            ['group' => 'trips', 'key' => 'booking_warning', 'text_ar' => 'تحذير الحجز', 'text_en' => 'Booking warning'],
+            ['group' => 'trips', 'key' => 'booking_blocked', 'text_ar' => 'تعذّر حفظ الحجز بسبب التعارضات التالية', 'text_en' => 'Booking blocked due to the following conflicts'],
+
+            // TripInspections field labels
+            ['group' => 'trip_inspections', 'key' => 'stage', 'text_ar' => 'المرحلة', 'text_en' => 'Stage'],
+            ['group' => 'trip_inspections', 'key' => 'odometer', 'text_ar' => 'العداد', 'text_en' => 'Odometer'],
+            ['group' => 'trip_inspections', 'key' => 'fuel_level', 'text_ar' => 'مستوى الوقود', 'text_en' => 'Fuel level'],
+            ['group' => 'trip_inspections', 'key' => 'performed_at', 'text_ar' => 'تاريخ الفحص', 'text_en' => 'Performed at'],
+            ['group' => 'trip_inspections', 'key' => 'inspector', 'text_ar' => 'المُفتش', 'text_en' => 'Inspector'],
+            ['group' => 'trip_inspections', 'key' => 'accessories_checklist', 'text_ar' => 'قائمة الإكسسوارات', 'text_en' => 'Accessories checklist'],
+            ['group' => 'trip_inspections', 'key' => 'accessory', 'text_ar' => 'الإكسسوار', 'text_en' => 'Accessory'],
+            ['group' => 'trip_inspections', 'key' => 'present', 'text_ar' => 'موجود', 'text_en' => 'Present'],
+            ['group' => 'trip_inspections', 'key' => 'driver_signature', 'text_ar' => 'توقيع السائق', 'text_en' => 'Driver signature'],
+            ['group' => 'trip_inspections', 'key' => 'customer_signature', 'text_ar' => 'توقيع العميل', 'text_en' => 'Customer signature'],
+            ['group' => 'trip_inspections', 'key' => 'photos', 'text_ar' => 'الصور', 'text_en' => 'Photos'],
+            ['group' => 'trip_inspections', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
+
+            // TripExpenses field labels
+            ['group' => 'trip_expenses', 'key' => 'type', 'text_ar' => 'النوع', 'text_en' => 'Type'],
+            ['group' => 'trip_expenses', 'key' => 'amount', 'text_ar' => 'المبلغ', 'text_en' => 'Amount'],
+            ['group' => 'trip_expenses', 'key' => 'incurred_at', 'text_ar' => 'تاريخ الصرف', 'text_en' => 'Incurred at'],
+            ['group' => 'trip_expenses', 'key' => 'receipt', 'text_ar' => 'الإيصال', 'text_en' => 'Receipt'],
+            ['group' => 'trip_expenses', 'key' => 'reimbursed', 'text_ar' => 'تم تعويضه', 'text_en' => 'Reimbursed'],
+            ['group' => 'trip_expenses', 'key' => 'notes', 'text_ar' => 'ملاحظات', 'text_en' => 'Notes'],
+
+            // TripDamageReports field labels
+            ['group' => 'trip_damage_reports', 'key' => 'description', 'text_ar' => 'الوصف', 'text_en' => 'Description'],
+            ['group' => 'trip_damage_reports', 'key' => 'photos', 'text_ar' => 'الصور', 'text_en' => 'Photos'],
+            ['group' => 'trip_damage_reports', 'key' => 'repair_cost_estimate', 'text_ar' => 'تكلفة الإصلاح المتوقعة', 'text_en' => 'Repair cost estimate'],
+            ['group' => 'trip_damage_reports', 'key' => 'actual_repair_cost', 'text_ar' => 'تكلفة الإصلاح الفعلية', 'text_en' => 'Actual repair cost'],
+            ['group' => 'trip_damage_reports', 'key' => 'charged_to_customer', 'text_ar' => 'يُحمَّل على العميل', 'text_en' => 'Charged to customer'],
+            ['group' => 'trip_damage_reports', 'key' => 'customer_charge_amount', 'text_ar' => 'مبلغ تحميل العميل', 'text_en' => 'Customer charge amount'],
+            ['group' => 'trip_damage_reports', 'key' => 'status', 'text_ar' => 'الحالة', 'text_en' => 'Status'],
         ];
 
         foreach ($rows as $row) {
