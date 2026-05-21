@@ -99,6 +99,59 @@ class TranslationSeeder extends Seeder
             ['group' => 'enums', 'key' => 'lead_status.quoted', 'text_ar' => 'تم عرض السعر', 'text_en' => 'Quoted'],
             ['group' => 'enums', 'key' => 'lead_status.won', 'text_ar' => 'مكسوب', 'text_en' => 'Won'],
             ['group' => 'enums', 'key' => 'lead_status.lost', 'text_ar' => 'مفقود', 'text_en' => 'Lost'],
+
+            // Phase 3 navigation
+            ['group' => 'navigation', 'key' => 'cars', 'text_ar' => 'السيارات', 'text_en' => 'Cars'],
+            ['group' => 'navigation', 'key' => 'sub_rental_contracts', 'text_ar' => 'عقود الإيجار الفرعي', 'text_en' => 'Sub-rental Contracts'],
+
+            // CarTransmission
+            ['group' => 'enums', 'key' => 'car_transmission.manual', 'text_ar' => 'يدوي', 'text_en' => 'Manual'],
+            ['group' => 'enums', 'key' => 'car_transmission.auto', 'text_ar' => 'أوتوماتيك', 'text_en' => 'Automatic'],
+
+            // CarFuelType
+            ['group' => 'enums', 'key' => 'car_fuel_type.petrol', 'text_ar' => 'بنزين', 'text_en' => 'Petrol'],
+            ['group' => 'enums', 'key' => 'car_fuel_type.diesel', 'text_ar' => 'ديزل', 'text_en' => 'Diesel'],
+            ['group' => 'enums', 'key' => 'car_fuel_type.hybrid', 'text_ar' => 'هجين', 'text_en' => 'Hybrid'],
+            ['group' => 'enums', 'key' => 'car_fuel_type.electric', 'text_ar' => 'كهرباء', 'text_en' => 'Electric'],
+
+            // CarOwnershipType
+            ['group' => 'enums', 'key' => 'car_ownership_type.owned', 'text_ar' => 'مملوكة', 'text_en' => 'Owned'],
+            ['group' => 'enums', 'key' => 'car_ownership_type.sub_rented', 'text_ar' => 'مؤجرة من الباطن', 'text_en' => 'Sub-rented'],
+            ['group' => 'enums', 'key' => 'car_ownership_type.replacement', 'text_ar' => 'بديلة', 'text_en' => 'Replacement'],
+
+            // CarStatus
+            ['group' => 'enums', 'key' => 'car_status.available', 'text_ar' => 'متاحة', 'text_en' => 'Available'],
+            ['group' => 'enums', 'key' => 'car_status.on_trip', 'text_ar' => 'في رحلة', 'text_en' => 'On trip'],
+            ['group' => 'enums', 'key' => 'car_status.in_maintenance', 'text_ar' => 'في الصيانة', 'text_en' => 'In maintenance'],
+            ['group' => 'enums', 'key' => 'car_status.at_partner', 'text_ar' => 'لدى الشريك', 'text_en' => 'At partner'],
+            ['group' => 'enums', 'key' => 'car_status.out_of_service', 'text_ar' => 'خارج الخدمة', 'text_en' => 'Out of service'],
+
+            // CarDocumentType
+            ['group' => 'enums', 'key' => 'car_document_type.registration_license', 'text_ar' => 'رخصة تسيير', 'text_en' => 'Registration license'],
+            ['group' => 'enums', 'key' => 'car_document_type.compulsory_insurance', 'text_ar' => 'تأمين إجباري', 'text_en' => 'Compulsory insurance'],
+            ['group' => 'enums', 'key' => 'car_document_type.comprehensive_insurance', 'text_ar' => 'تأمين شامل', 'text_en' => 'Comprehensive insurance'],
+            ['group' => 'enums', 'key' => 'car_document_type.technical_inspection', 'text_ar' => 'فحص فني', 'text_en' => 'Technical inspection'],
+            ['group' => 'enums', 'key' => 'car_document_type.inspection_sticker', 'text_ar' => 'ملصق الفحص', 'text_en' => 'Inspection sticker'],
+
+            // SubRentalContractStatus
+            ['group' => 'enums', 'key' => 'sub_rental_contract_status.active', 'text_ar' => 'نشط', 'text_en' => 'Active'],
+            ['group' => 'enums', 'key' => 'sub_rental_contract_status.expired', 'text_ar' => 'منتهي', 'text_en' => 'Expired'],
+            ['group' => 'enums', 'key' => 'sub_rental_contract_status.cancelled', 'text_ar' => 'ملغي', 'text_en' => 'Cancelled'],
+
+            // Cars tabs
+            ['group' => 'cars', 'key' => 'tabs.basic_info', 'text_ar' => 'البيانات الأساسية', 'text_en' => 'Basic info'],
+            ['group' => 'cars', 'key' => 'tabs.damage_map', 'text_ar' => 'خريطة الأضرار', 'text_en' => 'Damage map'],
+            ['group' => 'cars', 'key' => 'tabs.damage_map_placeholder', 'text_ar' => 'سيتم تعبئة هذه الخريطة من فحوصات الرحلات في المرحلة 5.', 'text_en' => 'This map will be populated from trip inspections in Phase 5.'],
+            ['group' => 'cars', 'key' => 'tabs.service_history', 'text_ar' => 'سجل الصيانة', 'text_en' => 'Service history'],
+            ['group' => 'cars', 'key' => 'tabs.service_history_placeholder', 'text_ar' => 'سيتم تعبئة هذا السجل من أوامر الصيانة في المرحلة 6.', 'text_en' => 'This log will be populated from maintenance orders in Phase 6.'],
+
+            // ExpiringDocumentsWidget
+            ['group' => 'widgets', 'key' => 'expiring_documents.expired', 'text_ar' => 'وثائق منتهية', 'text_en' => 'Expired documents'],
+            ['group' => 'widgets', 'key' => 'expiring_documents.expired_description', 'text_ar' => 'تحتاج إجراءً فورياً', 'text_en' => 'Needs immediate action'],
+            ['group' => 'widgets', 'key' => 'expiring_documents.within_30_days', 'text_ar' => 'تنتهي خلال 30 يوماً', 'text_en' => 'Expiring in 30 days'],
+            ['group' => 'widgets', 'key' => 'expiring_documents.within_30_description', 'text_ar' => 'جدولة التجديد قريباً', 'text_en' => 'Schedule renewal soon'],
+            ['group' => 'widgets', 'key' => 'expiring_documents.within_60_days', 'text_ar' => 'تنتهي خلال 60 يوماً', 'text_en' => 'Expiring in 60 days'],
+            ['group' => 'widgets', 'key' => 'expiring_documents.within_60_description', 'text_ar' => 'للمراقبة', 'text_en' => 'For monitoring'],
         ];
 
         foreach ($rows as $row) {
