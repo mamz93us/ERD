@@ -56,6 +56,7 @@
 - [ ] `php artisan key:generate` (production key, separate from dev)
 - [ ] `php artisan migrate --force`
 - [ ] `php artisan storage:link`
+- [ ] `php artisan filament:assets` — republishes Filament v5 JS/CSS/fonts into `public/css/filament`, `public/js/filament`, `public/fonts/filament` (these are gitignored)
 - [ ] `php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan event:cache`
 - [ ] Seed initial branch + super_admin user
 - [ ] Translator seeds final ar/en copy edits into `translations` table via admin
