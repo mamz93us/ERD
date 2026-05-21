@@ -14,6 +14,8 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             BranchSeeder::class,
             AdminUserSeeder::class,
+            CarCategorySeeder::class,
+            GarageSeeder::class,
             TranslationSeeder::class,
         ]);
     }
