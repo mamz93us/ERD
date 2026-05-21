@@ -615,6 +615,22 @@ class TranslationSeeder extends Seeder
             ['group' => 'maintenance_items', 'key' => 'unit_cost', 'text_ar' => 'تكلفة الوحدة', 'text_en' => 'Unit cost'],
             ['group' => 'maintenance_items', 'key' => 'total_cost', 'text_ar' => 'الإجمالي', 'text_en' => 'Total'],
             ['group' => 'maintenance_items', 'key' => 'total_cost_help', 'text_ar' => 'يُحسب تلقائياً كـ الكمية × تكلفة الوحدة', 'text_en' => 'Auto-computed as quantity × unit cost'],
+
+            // Trip Schedule page
+            ['group' => 'navigation', 'key' => 'trip_schedule', 'text_ar' => 'جدول الرحلات', 'text_en' => 'Trip Schedule'],
+            ['group' => 'trip_schedule', 'key' => 'window', 'text_ar' => 'الفترة', 'text_en' => 'Window'],
+            ['group' => 'trip_schedule', 'key' => 'window_7', 'text_ar' => '7 أيام', 'text_en' => '7 days'],
+            ['group' => 'trip_schedule', 'key' => 'window_14', 'text_ar' => '14 يوم', 'text_en' => '14 days'],
+            ['group' => 'trip_schedule', 'key' => 'window_30', 'text_ar' => '30 يوم', 'text_en' => '30 days'],
+            ['group' => 'trip_schedule', 'key' => 'branch', 'text_ar' => 'الفرع', 'text_en' => 'Branch'],
+            ['group' => 'trip_schedule', 'key' => 'all_branches', 'text_ar' => 'كل الفروع', 'text_en' => 'All branches'],
+            ['group' => 'trip_schedule', 'key' => 'include_cancelled', 'text_ar' => 'تضمين الرحلات الملغاة', 'text_en' => 'Include cancelled'],
+            ['group' => 'trip_schedule', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'trip_schedule', 'key' => 'no_cars', 'text_ar' => 'لا توجد سيارات لعرضها', 'text_en' => 'No cars to display'],
+            ['group' => 'trip_schedule', 'key' => 'legend_booked', 'text_ar' => 'محجوزة', 'text_en' => 'Booked'],
+            ['group' => 'trip_schedule', 'key' => 'legend_active', 'text_ar' => 'جارية', 'text_en' => 'Active'],
+            ['group' => 'trip_schedule', 'key' => 'legend_completed', 'text_ar' => 'مكتملة', 'text_en' => 'Completed'],
+            ['group' => 'trip_schedule', 'key' => 'legend_cancelled', 'text_ar' => 'ملغاة', 'text_en' => 'Cancelled'],
         ];
 
         foreach ($rows as $row) {
