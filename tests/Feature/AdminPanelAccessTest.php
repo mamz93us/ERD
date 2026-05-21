@@ -28,3 +28,12 @@ it('blocks an inactive user from the admin panel even with a role', function ():
 
     expect($user->canAccessPanel(Filament::getPanel('admin')))->toBeFalse();
 });
+
+it('renders the dashboard for an authenticated super_admin without 500', function (): void {
+    $user = User::factory()->create(['is_active' => true]);
+    $user->assignRole('super_admin');
+
+    $this->actingAs($user)
+        ->get('/admin')
+        ->assertSuccessful();
+});

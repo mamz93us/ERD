@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Models\Concerns\BelongsToBranch;
 use Database\Factories\UserFactory;
 use Filament\Models\Contracts\FilamentUser;
+use Filament\Models\Contracts\HasName;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -17,7 +18,7 @@ use OwenIt\Auditing\Auditable as AuditableTrait;
 use OwenIt\Auditing\Contracts\Auditable;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements Auditable, FilamentUser
+class User extends Authenticatable implements Auditable, FilamentUser, HasName
 {
     /** @use HasFactory<UserFactory> */
     use AuditableTrait, BelongsToBranch, HasFactory, HasRoles, HasUuids, Notifiable, SoftDeletes;

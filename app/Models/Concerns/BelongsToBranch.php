@@ -27,17 +27,20 @@ trait BelongsToBranch
         {
             public function apply(Builder $builder, $model): void
             {
-                $user = auth()->user();
+                // Use hasUser() (no resolution side-effect) to avoid infinite
+                // recursion when this scope is applied to the User model
+                // itself during EloquentUserProvider::retrieveById().
+                if (! app('auth')->guard()->hasUser()) {
+                    return;
+                }
+                $user = app('auth')->guard()->user();
                 if ($user === null) {
                     return;
                 }
                 if (method_exists($user, 'hasRole') && $user->hasRole('super_admin')) {
                     return;
                 }
-                if (! property_exists($user, 'branch_id') && ! isset($user->branch_id)) {
-                    return;
-                }
-                if ($user->branch_id === null) {
+                if (! isset($user->branch_id) || $user->branch_id === null) {
                     return;
                 }
                 $builder->where($model->qualifyColumn('branch_id'), $user->branch_id);
@@ -48,7 +51,10 @@ trait BelongsToBranch
             if (! empty($model->branch_id)) {
                 return;
             }
-            $user = auth()->user();
+            if (! app('auth')->guard()->hasUser()) {
+                return;
+            }
+            $user = app('auth')->guard()->user();
             if ($user && isset($user->branch_id) && $user->branch_id !== null) {
                 $model->branch_id = $user->branch_id;
             }
