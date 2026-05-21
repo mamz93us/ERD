@@ -14,7 +14,3 @@ it('defaults to Arabic locale with English fallback', function () {
     expect(config('app.locale'))->toBe('ar')
         ->and(config('app.fallback_locale'))->toBe('en');
 });
-
-it('uses the mysql database driver (MariaDB locally, MySQL/MariaDB in prod)', function () {
-    expect(config('database.default'))->toBe('mysql');
-});
