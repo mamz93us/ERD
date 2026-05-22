@@ -16,6 +16,7 @@ use App\Observers\MaintenanceScheduleObserver;
 use App\Observers\QuotationNumberObserver;
 use App\Observers\TrafficFineObserver;
 use App\Observers\TripNumberObserver;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -27,6 +28,10 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        if ($this->app->environment() !== 'local' || env('FORCE_HTTPS', false)) {
+            URL::forceScheme('https');
+        }
+
         CarDocument::observe(CarDocumentObserver::class);
         Quotation::observe(QuotationNumberObserver::class);
         Trip::observe(TripNumberObserver::class);
