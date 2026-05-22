@@ -108,6 +108,11 @@ class Trip extends Model implements Auditable
         return $this->hasMany(TripDamageReport::class);
     }
 
+    public function invoices(): HasMany
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
     /**
      * Move the trip to a new status, validating against the transition rules
      * defined in TripStatus::allowedNext(). Throws RuntimeException on illegal
