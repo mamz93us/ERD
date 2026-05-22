@@ -11,7 +11,15 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->redirectGuestsTo(function ($request) {
+            // Driver portal lives under /driver/* — guests bounce to its login.
+            if ($request->is('driver') || $request->is('driver/*')) {
+                return route('driver.login');
+            }
+
+            // Admin / Filament redirects handled by Filament itself.
+            return null;
+        });
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

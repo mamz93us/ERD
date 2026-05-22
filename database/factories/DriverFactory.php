@@ -20,6 +20,7 @@ class DriverFactory extends Factory
         return [
             'branch_id' => Branch::query()->inRandomOrder()->value('id') ?? Branch::factory(),
             'national_id' => fake()->unique()->numerify('##############'),
+            'password' => 'password',
             'full_name' => fake()->name('male'),
             'full_name_ar' => 'سائق',
             'phone' => fake()->phoneNumber(),
