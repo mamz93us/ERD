@@ -21,7 +21,9 @@ Route::get('/', function () {
 Route::prefix('driver')->name('driver.')->group(function () {
     Route::middleware('guest:driver')->group(function () {
         Route::get('login', [DriverAuthController::class, 'showLogin'])->name('login');
-        Route::post('login', [DriverAuthController::class, 'login'])->name('login.submit');
+        Route::post('login', [DriverAuthController::class, 'login'])
+            ->middleware('throttle:5,1')      // Phase 13: 5 attempts / minute / IP
+            ->name('login.submit');
     });
 
     Route::middleware('auth:driver')->group(function () {
@@ -46,7 +48,9 @@ Route::prefix('driver')->name('driver.')->group(function () {
 Route::prefix('portal')->name('portal.')->group(function () {
     Route::middleware('guest:customer')->group(function () {
         Route::get('login', [PortalAuthController::class, 'showLogin'])->name('login');
-        Route::post('login', [PortalAuthController::class, 'login'])->name('login.submit');
+        Route::post('login', [PortalAuthController::class, 'login'])
+            ->middleware('throttle:5,1')      // Phase 13: 5 attempts / minute / IP
+            ->name('login.submit');
     });
 
     Route::middleware('auth:customer')->group(function () {
