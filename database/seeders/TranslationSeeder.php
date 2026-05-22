@@ -878,6 +878,42 @@ class TranslationSeeder extends Seeder
             ['group' => 'expenses', 'key' => 'paid_by_user', 'text_ar' => 'دفعه', 'text_en' => 'Paid by user'],
             ['group' => 'expenses', 'key' => 'description', 'text_ar' => 'الوصف', 'text_en' => 'Description'],
             ['group' => 'expenses', 'key' => 'attachment', 'text_ar' => 'المرفق', 'text_en' => 'Attachment'],
+
+            // Phase 8.x — Invoice PDF action
+            ['group' => 'invoices', 'key' => 'download_pdf', 'text_ar' => 'تنزيل PDF', 'text_en' => 'Download PDF'],
+
+            // Phase 8.x — Reports navigation
+            ['group' => 'navigation', 'key' => 'reports', 'text_ar' => 'التقارير', 'text_en' => 'Reports'],
+            ['group' => 'navigation', 'key' => 'customer_aging', 'text_ar' => 'أعمار ذمم العملاء', 'text_en' => 'Customer Aging'],
+            ['group' => 'navigation', 'key' => 'vat_report', 'text_ar' => 'تقرير ضريبة القيمة المضافة', 'text_en' => 'VAT Report'],
+
+            // Phase 8.x — Reports shared labels
+            ['group' => 'reports', 'key' => 'as_of', 'text_ar' => 'حتى تاريخ', 'text_en' => 'As of'],
+            ['group' => 'reports', 'key' => 'as_of_label', 'text_ar' => 'الأرصدة المستحقة حتى', 'text_en' => 'Outstanding balances as of'],
+            ['group' => 'reports', 'key' => 'branch', 'text_ar' => 'الفرع', 'text_en' => 'Branch'],
+            ['group' => 'reports', 'key' => 'all_branches', 'text_ar' => 'كل الفروع', 'text_en' => 'All branches'],
+            ['group' => 'reports', 'key' => 'from', 'text_ar' => 'من', 'text_en' => 'From'],
+            ['group' => 'reports', 'key' => 'to', 'text_ar' => 'إلى', 'text_en' => 'To'],
+            ['group' => 'reports', 'key' => 'period', 'text_ar' => 'الفترة', 'text_en' => 'Period'],
+            ['group' => 'reports', 'key' => 'customer', 'text_ar' => 'العميل', 'text_en' => 'Customer'],
+            ['group' => 'reports', 'key' => 'corporate', 'text_ar' => 'شركة', 'text_en' => 'Corporate'],
+            ['group' => 'reports', 'key' => 'bucket_0_30', 'text_ar' => '0–30 يوم', 'text_en' => '0–30 days'],
+            ['group' => 'reports', 'key' => 'bucket_31_60', 'text_ar' => '31–60 يوم', 'text_en' => '31–60 days'],
+            ['group' => 'reports', 'key' => 'bucket_61_90', 'text_ar' => '61–90 يوم', 'text_en' => '61–90 days'],
+            ['group' => 'reports', 'key' => 'bucket_90_plus', 'text_ar' => '+90 يوم', 'text_en' => '90+ days'],
+            ['group' => 'reports', 'key' => 'total', 'text_ar' => 'الإجمالي', 'text_en' => 'Total'],
+            ['group' => 'reports', 'key' => 'grand_total', 'text_ar' => 'الإجمالي الكلي', 'text_en' => 'Grand total'],
+            ['group' => 'reports', 'key' => 'no_outstanding', 'text_ar' => 'لا توجد أرصدة مستحقة في هذا التاريخ', 'text_en' => 'No outstanding balances as of this date'],
+
+            // VAT report
+            ['group' => 'reports', 'key' => 'output_vat_title', 'text_ar' => 'ضريبة المخرجات (المبيعات)', 'text_en' => 'Output VAT (sales)'],
+            ['group' => 'reports', 'key' => 'input_vat_title', 'text_ar' => 'ضريبة المدخلات (المشتريات)', 'text_en' => 'Input VAT (purchases)'],
+            ['group' => 'reports', 'key' => 'taxable_base', 'text_ar' => 'الوعاء الضريبي', 'text_en' => 'Taxable base'],
+            ['group' => 'reports', 'key' => 'vat_amount', 'text_ar' => 'قيمة الضريبة', 'text_en' => 'VAT amount'],
+            ['group' => 'reports', 'key' => 'gross_total', 'text_ar' => 'الإجمالي مع الضريبة', 'text_en' => 'Gross total'],
+            ['group' => 'reports', 'key' => 'net_vat_payable', 'text_ar' => 'صافي الضريبة المستحقة للسداد', 'text_en' => 'Net VAT payable'],
+            ['group' => 'reports', 'key' => 'net_vat_refundable', 'text_ar' => 'صافي الضريبة المستردة', 'text_en' => 'Net VAT refundable'],
+            ['group' => 'reports', 'key' => 'net_vat_formula', 'text_ar' => 'ضريبة المخرجات − ضريبة المدخلات', 'text_en' => 'Output VAT − Input VAT'],
         ];
 
         foreach ($rows as $row) {
