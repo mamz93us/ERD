@@ -9,47 +9,90 @@
         /** @var array<string, array<string, list<\App\Models\Trip>>> $tripsByCarAndDay */
     @endphp
 
-    <div class="mt-4 overflow-x-auto rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-        <table class="min-w-full text-xs border-collapse">
-            <thead class="bg-gray-50 dark:bg-gray-800 sticky top-0 z-10">
+    <div style="margin-top: 1rem; overflow-x: auto; border-radius: 12px; border: 1px solid #e5e7eb; background-color: #ffffff; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+        <table style="min-width: 100%; border-collapse: collapse; font-size: 12px;">
+            <thead style="position: sticky; top: 0; z-index: 10; background-color: #f3f4f6;">
                 <tr>
-                    <th class="sticky left-0 z-20 bg-gray-50 dark:bg-gray-800 border-b border-r border-gray-200 dark:border-gray-700 px-3 py-2 text-start font-semibold text-gray-700 dark:text-gray-300 min-w-[140px]">
+                    <th style="position: sticky; inset-inline-start: 0; z-index: 20; background-color: #f3f4f6; color: #1f2937; border-bottom: 2px solid #d1d5db; border-inline-end: 1px solid #d1d5db; padding: 12px 16px; text-align: start; font-weight: 700; min-width: 180px;">
                         {{ __('trip_schedule.car') }}
                     </th>
                     @foreach($days as $day)
-                        <th class="border-b border-r border-gray-200 dark:border-gray-700 px-2 py-2 text-center font-medium text-gray-600 dark:text-gray-400 min-w-[110px] {{ $day->isWeekend() ? 'bg-amber-50/40 dark:bg-amber-900/10' : '' }} {{ $day->isToday() ? 'bg-primary-50 dark:bg-primary-900/30 text-primary-700 dark:text-primary-200 font-bold' : '' }}">
-                            <div>{{ $day->format('D') }}</div>
-                            <div class="text-xs">{{ $day->format('M j') }}</div>
+                        @php
+                            if ($day->isToday()) {
+                                $headerStyle = 'background-color: #f59e0b; color: #ffffff;';
+                            } elseif ($day->isWeekend()) {
+                                $headerStyle = 'background-color: #fef3c7; color: #78350f;';
+                            } else {
+                                $headerStyle = 'background-color: #f3f4f6; color: #374151;';
+                            }
+                        @endphp
+                        <th style="{{ $headerStyle }} padding: 12px 8px; text-align: center; font-weight: 600; min-width: 160px; border-bottom: 2px solid #d1d5db; border-inline-end: 1px solid #d1d5db;">
+                            <div style="font-size: 11px; opacity: 0.9;">{{ $day->format('D') }}</div>
+                            <div style="font-size: 14px; font-weight: 700;">{{ $day->format('M j') }}</div>
                         </th>
                     @endforeach
                 </tr>
             </thead>
             <tbody>
                 @forelse($cars as $car)
-                    <tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
-                        <td class="sticky left-0 z-10 bg-white dark:bg-gray-900 border-b border-r border-gray-200 dark:border-gray-700 px-3 py-2 font-medium">
-                            <div class="text-gray-900 dark:text-gray-100">{{ $car->plate }}</div>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">{{ $car->make }} {{ $car->model }}</div>
-                            <div class="text-xs text-gray-400">{{ $car->branch?->code }}</div>
+                    @php $rowEven = $loop->index % 2 === 0; @endphp
+                    @php $rowBg = $rowEven ? '#ffffff' : '#f9fafb'; @endphp
+                    <tr style="background-color: {{ $rowBg }};">
+                        <td style="position: sticky; inset-inline-start: 0; z-index: 5; background-color: {{ $rowBg }}; padding: 12px 16px; border-bottom: 1px solid #e5e7eb; border-inline-end: 1px solid #e5e7eb; vertical-align: top;">
+                            <div style="font-size: 14px; font-weight: 700; color: #111827;">{{ $car->plate }}</div>
+                            <div style="font-size: 11px; color: #4b5563; margin-top: 2px;">{{ $car->make }} {{ $car->model }}</div>
+                            <div style="margin-top: 6px;">
+                                <span style="display: inline-block; background-color: #dbeafe; color: #1e40af; font-size: 10px; font-weight: 600; padding: 2px 8px; border-radius: 9999px;">
+                                    {{ $car->branch?->code }}
+                                </span>
+                            </div>
                         </td>
                         @foreach($days as $day)
                             @php $tripsToday = $tripsByCarAndDay[$car->id][$day->toDateString()] ?? []; @endphp
-                            <td class="border-b border-r border-gray-200 dark:border-gray-700 align-top p-1 {{ $day->isWeekend() ? 'bg-amber-50/30 dark:bg-amber-900/5' : '' }}">
+                            @php
+                                if ($day->isToday()) {
+                                    $cellStyle = 'background-color: #fffbeb;';
+                                } elseif ($day->isWeekend()) {
+                                    $cellStyle = 'background-color: #fefce8;';
+                                } else {
+                                    $cellStyle = '';
+                                }
+                            @endphp
+                            <td style="{{ $cellStyle }} vertical-align: top; padding: 6px; border-bottom: 1px solid #e5e7eb; border-inline-end: 1px solid #e5e7eb; min-height: 80px;">
                                 @foreach($tripsToday as $trip)
                                     @php
-                                        $color = match($trip->status?->value) {
-                                            'confirmed', 'assigned' => 'bg-sky-100 text-sky-900 border-sky-300 dark:bg-sky-900/40 dark:text-sky-100 dark:border-sky-700',
-                                            'en_route', 'in_progress' => 'bg-amber-100 text-amber-900 border-amber-300 dark:bg-amber-900/40 dark:text-amber-100 dark:border-amber-700',
-                                            'completed', 'invoiced', 'closed' => 'bg-emerald-100 text-emerald-900 border-emerald-300 dark:bg-emerald-900/40 dark:text-emerald-100 dark:border-emerald-700',
-                                            'cancelled', 'no_show' => 'bg-rose-100 text-rose-900 border-rose-300 dark:bg-rose-900/40 dark:text-rose-100 dark:border-rose-700',
-                                            default => 'bg-gray-100 text-gray-900 border-gray-300 dark:bg-gray-700 dark:text-gray-100 dark:border-gray-600',
+                                        $bg = match($trip->status?->value) {
+                                            'draft' => '#64748b',
+                                            'confirmed', 'assigned' => '#0284c7',
+                                            'en_route', 'in_progress' => '#f97316',
+                                            'completed', 'invoiced', 'closed' => '#059669',
+                                            'cancelled', 'no_show' => '#e11d48',
+                                            default => '#6b7280',
+                                        };
+                                        $label = match($trip->status?->value) {
+                                            'draft' => __('trip_schedule.status_draft'),
+                                            'confirmed' => __('trip_schedule.status_confirmed'),
+                                            'assigned' => __('trip_schedule.status_assigned'),
+                                            'en_route' => __('trip_schedule.status_en_route'),
+                                            'in_progress' => __('trip_schedule.status_in_progress'),
+                                            'completed' => __('trip_schedule.status_completed'),
+                                            'invoiced' => __('trip_schedule.status_invoiced'),
+                                            'closed' => __('trip_schedule.status_closed'),
+                                            'cancelled' => __('trip_schedule.status_cancelled'),
+                                            'no_show' => __('trip_schedule.status_no_show'),
+                                            default => '',
                                         };
                                     @endphp
                                     <a href="{{ route('filament.admin.resources.trips.edit', $trip) }}"
-                                       class="block mb-1 px-2 py-1 rounded border-s-4 {{ $color }} hover:opacity-80 transition">
-                                        <div class="font-semibold truncate">{{ $trip->trip_number }}</div>
-                                        <div class="truncate opacity-80">{{ $trip->customer?->full_name }}</div>
-                                        <div class="text-[10px] opacity-70">
+                                       style="display: block; margin-bottom: 6px; background-color: {{ $bg }}; color: #ffffff; padding: 8px 10px; border-radius: 8px; text-decoration: none; box-shadow: 0 1px 3px rgba(0,0,0,0.15); border: 1px solid rgba(255,255,255,0.15); min-height: 64px;">
+                                        <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 2px;">
+                                            <span style="font-size: 11px; font-weight: 700; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $trip->trip_number }}</span>
+                                            @if($label)
+                                                <span style="font-size: 9px; background-color: rgba(255,255,255,0.25); color: #ffffff; padding: 1px 6px; border-radius: 9999px; white-space: nowrap;">{{ $label }}</span>
+                                            @endif
+                                        </div>
+                                        <div style="font-size: 11px; color: #ffffff; opacity: 0.95; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{ $trip->customer?->full_name }}</div>
+                                        <div style="font-size: 10px; color: #ffffff; opacity: 0.9; margin-top: 4px;">
                                             {{ \Illuminate\Support\Carbon::parse($trip->scheduled_start)->format('H:i') }}
                                             →
                                             {{ \Illuminate\Support\Carbon::parse($trip->scheduled_end)->format('M j H:i') }}
@@ -61,7 +104,7 @@
                     </tr>
                 @empty
                     <tr>
-                        <td colspan="{{ count($days) + 1 }}" class="px-4 py-8 text-center text-gray-500 dark:text-gray-400">
+                        <td colspan="{{ count($days) + 1 }}" style="padding: 48px 16px; text-align: center; color: #6b7280;">
                             {{ __('trip_schedule.no_cars') }}
                         </td>
                     </tr>
@@ -70,10 +113,22 @@
         </table>
     </div>
 
-    <div class="mt-4 flex flex-wrap gap-3 text-xs text-gray-600 dark:text-gray-400">
-        <span class="inline-flex items-center gap-1"><span class="inline-block h-3 w-3 rounded border-2 border-sky-400 bg-sky-100 dark:bg-sky-900/40"></span> {{ __('trip_schedule.legend_booked') }}</span>
-        <span class="inline-flex items-center gap-1"><span class="inline-block h-3 w-3 rounded border-2 border-amber-400 bg-amber-100 dark:bg-amber-900/40"></span> {{ __('trip_schedule.legend_active') }}</span>
-        <span class="inline-flex items-center gap-1"><span class="inline-block h-3 w-3 rounded border-2 border-emerald-400 bg-emerald-100 dark:bg-emerald-900/40"></span> {{ __('trip_schedule.legend_completed') }}</span>
-        <span class="inline-flex items-center gap-1"><span class="inline-block h-3 w-3 rounded border-2 border-rose-400 bg-rose-100 dark:bg-rose-900/40"></span> {{ __('trip_schedule.legend_cancelled') }}</span>
+    <div style="margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px;">
+        <span style="display: inline-flex; align-items: center; gap: 8px; background-color: #0284c7; color: #ffffff; padding: 6px 12px; border-radius: 9999px;">
+            <span style="display: inline-block; background-color: #ffffff; height: 8px; width: 8px; border-radius: 9999px;"></span>
+            {{ __('trip_schedule.legend_booked') }}
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; background-color: #f97316; color: #ffffff; padding: 6px 12px; border-radius: 9999px;">
+            <span style="display: inline-block; background-color: #ffffff; height: 8px; width: 8px; border-radius: 9999px;"></span>
+            {{ __('trip_schedule.legend_active') }}
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; background-color: #059669; color: #ffffff; padding: 6px 12px; border-radius: 9999px;">
+            <span style="display: inline-block; background-color: #ffffff; height: 8px; width: 8px; border-radius: 9999px;"></span>
+            {{ __('trip_schedule.legend_completed') }}
+        </span>
+        <span style="display: inline-flex; align-items: center; gap: 8px; background-color: #e11d48; color: #ffffff; padding: 6px 12px; border-radius: 9999px;">
+            <span style="display: inline-block; background-color: #ffffff; height: 8px; width: 8px; border-radius: 9999px;"></span>
+            {{ __('trip_schedule.legend_cancelled') }}
+        </span>
     </div>
 </x-filament-panels::page>

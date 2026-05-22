@@ -631,6 +631,16 @@ class TranslationSeeder extends Seeder
             ['group' => 'trip_schedule', 'key' => 'legend_active', 'text_ar' => 'جارية', 'text_en' => 'Active'],
             ['group' => 'trip_schedule', 'key' => 'legend_completed', 'text_ar' => 'مكتملة', 'text_en' => 'Completed'],
             ['group' => 'trip_schedule', 'key' => 'legend_cancelled', 'text_ar' => 'ملغاة', 'text_en' => 'Cancelled'],
+            ['group' => 'trip_schedule', 'key' => 'status_draft', 'text_ar' => 'مسودة', 'text_en' => 'Draft'],
+            ['group' => 'trip_schedule', 'key' => 'status_confirmed', 'text_ar' => 'مؤكدة', 'text_en' => 'Confirmed'],
+            ['group' => 'trip_schedule', 'key' => 'status_assigned', 'text_ar' => 'مُسندة', 'text_en' => 'Assigned'],
+            ['group' => 'trip_schedule', 'key' => 'status_en_route', 'text_ar' => 'في الطريق', 'text_en' => 'En route'],
+            ['group' => 'trip_schedule', 'key' => 'status_in_progress', 'text_ar' => 'جارية', 'text_en' => 'In progress'],
+            ['group' => 'trip_schedule', 'key' => 'status_completed', 'text_ar' => 'مكتملة', 'text_en' => 'Completed'],
+            ['group' => 'trip_schedule', 'key' => 'status_invoiced', 'text_ar' => 'مُفوترة', 'text_en' => 'Invoiced'],
+            ['group' => 'trip_schedule', 'key' => 'status_closed', 'text_ar' => 'مغلقة', 'text_en' => 'Closed'],
+            ['group' => 'trip_schedule', 'key' => 'status_cancelled', 'text_ar' => 'ملغاة', 'text_en' => 'Cancelled'],
+            ['group' => 'trip_schedule', 'key' => 'status_no_show', 'text_ar' => 'لم يحضر', 'text_en' => 'No-show'],
 
             // Phase 7 navigation
             ['group' => 'navigation', 'key' => 'compliance', 'text_ar' => 'الامتثال', 'text_en' => 'Compliance'],
