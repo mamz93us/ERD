@@ -11,6 +11,7 @@ use App\Models\MaintenanceOrder;
 use App\Models\MaintenanceSchedule;
 use App\Models\Payment;
 use App\Models\Quotation;
+use App\Models\SystemSetting;
 use App\Models\TrafficFine;
 use App\Models\Trip;
 use App\Models\VendorBill;
@@ -46,6 +47,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->make(ChannelManager::class)
             ->extend('whatsapp', fn ($app) => $app->make(WhatsappChannel::class));
 
+        // Phase 15: pull mail + green-api creds from system_settings if set.
+        // Operator can flip these in admin without redeploy / .env edit.
+        $this->applySystemSettings();
+
         CarDocument::observe(CarDocumentObserver::class);
         Quotation::observe(QuotationNumberObserver::class);
         Trip::observe(TripNumberObserver::class);
@@ -56,5 +61,48 @@ class AppServiceProvider extends ServiceProvider
         CreditNote::observe(CreditNoteNumberObserver::class);
         Payment::observe(PaymentNumberObserver::class);
         VendorBill::observe(VendorBillNumberObserver::class);
+    }
+
+    /**
+     * Overlay system_settings values onto runtime config. Skipped on the
+     * very first install (before the migration runs) by catching the
+     * "missing table" exception.
+     */
+    private function applySystemSettings(): void
+    {
+        try {
+            $get = SystemSetting::get(...);
+        } catch (\Throwable) {
+            return;
+        }
+
+        if ($name = $get('system.name')) {
+            config(['app.name' => $name]);
+        }
+
+        $mailHost = $get('mail.host');
+        if (filled($mailHost)) {
+            config([
+                'mail.default' => 'smtp',
+                'mail.mailers.smtp.host' => $mailHost,
+                'mail.mailers.smtp.port' => (int) ($get('mail.port') ?? 587),
+                'mail.mailers.smtp.username' => $get('mail.username'),
+                'mail.mailers.smtp.password' => $get('mail.password'),
+                'mail.mailers.smtp.encryption' => $get('mail.encryption') ?? 'tls',
+                'mail.from.address' => $get('mail.from_address') ?? config('mail.from.address'),
+                'mail.from.name' => $get('mail.from_name') ?? config('mail.from.name'),
+            ]);
+        }
+
+        $waInstance = $get('whatsapp.instance_id');
+        $waToken = $get('whatsapp.token');
+        if (filled($waInstance) && filled($waToken)) {
+            config([
+                'services.green_api.instance_id' => $waInstance,
+                'services.green_api.token' => $waToken,
+            ]);
+            // Re-bind WhatsappService so it picks up the fresh creds.
+            $this->app->singleton(WhatsappService::class, fn () => WhatsappService::fromConfig());
+        }
     }
 }

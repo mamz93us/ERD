@@ -28,6 +28,14 @@ class DriverForm
                 ->required()
                 ->unique(ignoreRecord: true)
                 ->maxLength(255),
+            TextInput::make('password')
+                ->label(__('drivers.password'))
+                ->password()
+                ->revealable()
+                ->helperText(__('drivers.password_help'))
+                ->maxLength(255)
+                ->dehydrated(fn ($state) => filled($state))
+                ->required(fn (string $context): bool => $context === 'create'),
             TextInput::make('full_name')
                 ->label(__('drivers.full_name'))
                 ->required()

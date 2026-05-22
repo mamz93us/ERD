@@ -11,9 +11,7 @@ use App\Http\Controllers\Portal\AuthController as PortalAuthController;
 use App\Http\Controllers\Portal\PortalController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', fn () => view('home'))->name('home');
 
 /*
  * Phase 10 — Driver mobile-friendly web app at /driver.

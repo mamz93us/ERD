@@ -48,6 +48,13 @@ class CustomerForm
                 ->label(__('customers.email'))
                 ->email()
                 ->maxLength(255),
+            TextInput::make('password')
+                ->label(__('customers.portal_password'))
+                ->password()
+                ->revealable()
+                ->helperText(__('customers.portal_password_help'))
+                ->maxLength(255)
+                ->dehydrated(fn ($state) => filled($state)),
             TextInput::make('national_id')
                 ->label(__('customers.national_id'))
                 ->maxLength(255),

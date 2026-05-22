@@ -10,6 +10,7 @@ use App\Filament\Admin\Widgets\OperationsStatsWidget;
 use App\Filament\Admin\Widgets\OutstandingReceivablesWidget;
 use App\Filament\Admin\Widgets\RevenueComparisonWidget;
 use App\Http\Middleware\SetLocale;
+use App\Models\SystemSetting;
 use Filament\Auth\Pages\Login;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -36,7 +37,17 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login(Login::class)
-            ->brandName(fn () => __('app.name'))
+            ->brandName(function () {
+                $key = app()->getLocale() === 'ar' ? 'system.name_ar' : 'system.name';
+                $fallback = app()->getLocale() === 'ar' ? 'مجموعة عدلي' : 'Adly Group Agency';
+
+                return SystemSetting::get($key, $fallback);
+            })
+            ->brandLogo(function () {
+                $logo = SystemSetting::get('system.logo_path');
+
+                return $logo ? asset('storage/'.ltrim($logo, '/')) : null;
+            })
             ->colors([
                 'primary' => Color::Amber,
             ])

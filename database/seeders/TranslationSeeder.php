@@ -1110,6 +1110,61 @@ class TranslationSeeder extends Seeder
             ['group' => 'widgets', 'key' => 'trips_last_30', 'text_ar' => 'الرحلات (30 يوم)', 'text_en' => 'Trips (30d)'],
             ['group' => 'widgets', 'key' => 'rating', 'text_ar' => 'التقييم', 'text_en' => 'Rating'],
             ['group' => 'widgets', 'key' => 'commission_pct', 'text_ar' => 'نسبة العمولة', 'text_en' => 'Commission %'],
+
+            // Phase 15 — Settings + audit log + roles
+            ['group' => 'navigation', 'key' => 'system_settings', 'text_ar' => 'إعدادات النظام', 'text_en' => 'System Settings'],
+            ['group' => 'navigation', 'key' => 'audit_log', 'text_ar' => 'سجل المراجعة', 'text_en' => 'Audit Log'],
+            ['group' => 'navigation', 'key' => 'roles', 'text_ar' => 'الأدوار', 'text_en' => 'Roles'],
+
+            // System settings page
+            ['group' => 'system_settings', 'key' => 'branding', 'text_ar' => 'الهوية البصرية', 'text_en' => 'Branding'],
+            ['group' => 'system_settings', 'key' => 'branding_help', 'text_ar' => 'الاسم والشعار يظهران في كل صفحات النظام والتقارير PDF.', 'text_en' => 'Name + logo appear across every page and PDF report.'],
+            ['group' => 'system_settings', 'key' => 'system_name', 'text_ar' => 'اسم النظام (إنجليزي)', 'text_en' => 'System name (English)'],
+            ['group' => 'system_settings', 'key' => 'system_name_ar', 'text_ar' => 'اسم النظام (عربي)', 'text_en' => 'System name (Arabic)'],
+            ['group' => 'system_settings', 'key' => 'logo', 'text_ar' => 'الشعار', 'text_en' => 'Logo'],
+            ['group' => 'system_settings', 'key' => 'mail_title', 'text_ar' => 'إعدادات البريد الإلكتروني (SMTP)', 'text_en' => 'Email (SMTP) settings'],
+            ['group' => 'system_settings', 'key' => 'mail_help', 'text_ar' => 'تستخدم لإرسال إشعارات الفواتير وإيصالات الدفع.', 'text_en' => 'Used to send invoice notifications and payment receipts.'],
+            ['group' => 'system_settings', 'key' => 'mail_host', 'text_ar' => 'خادم SMTP', 'text_en' => 'SMTP host'],
+            ['group' => 'system_settings', 'key' => 'mail_port', 'text_ar' => 'منفذ SMTP', 'text_en' => 'SMTP port'],
+            ['group' => 'system_settings', 'key' => 'mail_username', 'text_ar' => 'اسم المستخدم', 'text_en' => 'Username'],
+            ['group' => 'system_settings', 'key' => 'mail_password', 'text_ar' => 'كلمة المرور', 'text_en' => 'Password'],
+            ['group' => 'system_settings', 'key' => 'mail_password_help', 'text_ar' => 'تُخزَّن مشفرة في قاعدة البيانات.', 'text_en' => 'Stored encrypted in the database.'],
+            ['group' => 'system_settings', 'key' => 'mail_encryption', 'text_ar' => 'التشفير (tls/ssl)', 'text_en' => 'Encryption (tls/ssl)'],
+            ['group' => 'system_settings', 'key' => 'mail_from_address', 'text_ar' => 'البريد المُرسِل', 'text_en' => 'From address'],
+            ['group' => 'system_settings', 'key' => 'mail_from_name', 'text_ar' => 'اسم المُرسِل', 'text_en' => 'From name'],
+            ['group' => 'system_settings', 'key' => 'whatsapp_title', 'text_ar' => 'إعدادات واتساب (Green API)', 'text_en' => 'WhatsApp (Green API) settings'],
+            ['group' => 'system_settings', 'key' => 'whatsapp_help', 'text_ar' => 'بيانات حساب Green API الخاص بك.', 'text_en' => 'Your Green API account credentials.'],
+            ['group' => 'system_settings', 'key' => 'whatsapp_instance_id', 'text_ar' => 'معرّف Instance', 'text_en' => 'Instance ID'],
+            ['group' => 'system_settings', 'key' => 'whatsapp_token', 'text_ar' => 'Token', 'text_en' => 'Token'],
+            ['group' => 'system_settings', 'key' => 'whatsapp_token_help', 'text_ar' => 'يُخزَّن مشفراً. ابدأ بإرسال رسالة اختبار من إعدادات Green API للتحقق.', 'text_en' => 'Stored encrypted. Test by sending a message from Green API console first.'],
+            ['group' => 'system_settings', 'key' => 'save', 'text_ar' => 'حفظ الإعدادات', 'text_en' => 'Save settings'],
+            ['group' => 'system_settings', 'key' => 'saved', 'text_ar' => 'تم حفظ الإعدادات', 'text_en' => 'Settings saved'],
+
+            // Roles resource
+            ['group' => 'roles', 'key' => 'name', 'text_ar' => 'الاسم', 'text_en' => 'Name'],
+            ['group' => 'roles', 'key' => 'guard', 'text_ar' => 'الحارس', 'text_en' => 'Guard'],
+            ['group' => 'roles', 'key' => 'permissions', 'text_ar' => 'الصلاحيات', 'text_en' => 'Permissions'],
+            ['group' => 'roles', 'key' => 'permissions_help', 'text_ar' => 'الصلاحيات المُمنوحة لهذا الدور. غير ذلك يُمنع.', 'text_en' => 'Permissions granted to this role. Anything not ticked is denied.'],
+            ['group' => 'roles', 'key' => 'permissions_count', 'text_ar' => 'عدد الصلاحيات', 'text_en' => 'Permissions'],
+            ['group' => 'roles', 'key' => 'users_count', 'text_ar' => 'عدد المستخدمين', 'text_en' => 'Users'],
+
+            // Audit log
+            ['group' => 'audit', 'key' => 'timestamp', 'text_ar' => 'الوقت', 'text_en' => 'When'],
+            ['group' => 'audit', 'key' => 'event', 'text_ar' => 'الحدث', 'text_en' => 'Event'],
+            ['group' => 'audit', 'key' => 'model', 'text_ar' => 'النموذج', 'text_en' => 'Model'],
+            ['group' => 'audit', 'key' => 'record_id', 'text_ar' => 'المعرّف', 'text_en' => 'Record ID'],
+            ['group' => 'audit', 'key' => 'user', 'text_ar' => 'المستخدم', 'text_en' => 'User'],
+            ['group' => 'audit', 'key' => 'ip', 'text_ar' => 'IP', 'text_en' => 'IP'],
+            ['group' => 'audit', 'key' => 'url', 'text_ar' => 'الرابط', 'text_en' => 'URL'],
+            ['group' => 'audit', 'key' => 'changes', 'text_ar' => 'التغييرات', 'text_en' => 'Changes'],
+            ['group' => 'audit', 'key' => 'has_user', 'text_ar' => 'لديه مستخدم', 'text_en' => 'Has user'],
+            ['group' => 'audit', 'key' => 'any', 'text_ar' => 'الكل', 'text_en' => 'Any'],
+
+            // Password fields on Driver + Customer forms
+            ['group' => 'drivers', 'key' => 'password', 'text_ar' => 'كلمة مرور بوابة السائق', 'text_en' => 'Driver portal password'],
+            ['group' => 'drivers', 'key' => 'password_help', 'text_ar' => 'اتركها فارغة عند التعديل للاحتفاظ بالكلمة الحالية.', 'text_en' => 'Leave blank when editing to keep the current password.'],
+            ['group' => 'customers', 'key' => 'portal_password', 'text_ar' => 'كلمة مرور بوابة العميل', 'text_en' => 'Customer portal password'],
+            ['group' => 'customers', 'key' => 'portal_password_help', 'text_ar' => 'اتركها فارغة لمنع العميل من تسجيل الدخول للبوابة.', 'text_en' => 'Leave blank to disable portal login for this customer.'],
         ];
 
         foreach ($rows as $row) {
