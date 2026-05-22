@@ -914,6 +914,32 @@ class TranslationSeeder extends Seeder
             ['group' => 'reports', 'key' => 'net_vat_payable', 'text_ar' => 'صافي الضريبة المستحقة للسداد', 'text_en' => 'Net VAT payable'],
             ['group' => 'reports', 'key' => 'net_vat_refundable', 'text_ar' => 'صافي الضريبة المستردة', 'text_en' => 'Net VAT refundable'],
             ['group' => 'reports', 'key' => 'net_vat_formula', 'text_ar' => 'ضريبة المخرجات − ضريبة المدخلات', 'text_en' => 'Output VAT − Input VAT'],
+
+            // Vendor aging
+            ['group' => 'navigation', 'key' => 'vendor_aging', 'text_ar' => 'أعمار ذمم الموردين', 'text_en' => 'Vendor Aging'],
+            ['group' => 'reports', 'key' => 'vendor', 'text_ar' => 'المورد', 'text_en' => 'Vendor'],
+            ['group' => 'reports', 'key' => 'vendor_type', 'text_ar' => 'النوع', 'text_en' => 'Type'],
+            ['group' => 'reports', 'key' => 'no_vendor_balances', 'text_ar' => 'لا توجد ذمم موردين مستحقة', 'text_en' => 'No outstanding vendor balances'],
+
+            // Cash flow
+            ['group' => 'navigation', 'key' => 'cash_flow', 'text_ar' => 'التدفق النقدي', 'text_en' => 'Cash Flow'],
+            ['group' => 'reports', 'key' => 'month', 'text_ar' => 'الشهر', 'text_en' => 'Month'],
+            ['group' => 'reports', 'key' => 'cash_in', 'text_ar' => 'التدفق الداخل', 'text_en' => 'Cash in'],
+            ['group' => 'reports', 'key' => 'cash_out', 'text_ar' => 'التدفق الخارج', 'text_en' => 'Cash out'],
+            ['group' => 'reports', 'key' => 'net', 'text_ar' => 'الصافي', 'text_en' => 'Net'],
+            ['group' => 'reports', 'key' => 'net_cash_flow', 'text_ar' => 'صافي التدفق النقدي', 'text_en' => 'Net cash flow'],
+
+            // Car profitability (revenue per car + per-car P&L combined)
+            ['group' => 'navigation', 'key' => 'car_profitability', 'text_ar' => 'ربحية السيارات', 'text_en' => 'Car Profitability'],
+            ['group' => 'reports', 'key' => 'car', 'text_ar' => 'السيارة', 'text_en' => 'Car'],
+            ['group' => 'reports', 'key' => 'category', 'text_ar' => 'الفئة', 'text_en' => 'Category'],
+            ['group' => 'reports', 'key' => 'revenue', 'text_ar' => 'الإيراد', 'text_en' => 'Revenue'],
+            ['group' => 'reports', 'key' => 'commission', 'text_ar' => 'عمولة السائق', 'text_en' => 'Driver commission'],
+            ['group' => 'reports', 'key' => 'sub_rental_cost', 'text_ar' => 'تكلفة الإيجار الفرعي', 'text_en' => 'Sub-rental cost'],
+            ['group' => 'reports', 'key' => 'expenses', 'text_ar' => 'المصروفات', 'text_en' => 'Expenses'],
+            ['group' => 'reports', 'key' => 'fines', 'text_ar' => 'المخالفات', 'text_en' => 'Fines'],
+            ['group' => 'reports', 'key' => 'profit', 'text_ar' => 'الربح', 'text_en' => 'Profit'],
+            ['group' => 'reports', 'key' => 'no_car_activity', 'text_ar' => 'لا توجد أنشطة للسيارات في هذه الفترة', 'text_en' => 'No car activity in this period'],
         ];
 
         foreach ($rows as $row) {
