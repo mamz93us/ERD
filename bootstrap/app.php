@@ -12,9 +12,11 @@ return Application::configure(basePath: dirname(__DIR__))
     )
     ->withMiddleware(function (Middleware $middleware) {
         $middleware->redirectGuestsTo(function ($request) {
-            // Driver portal lives under /driver/* — guests bounce to its login.
             if ($request->is('driver') || $request->is('driver/*')) {
                 return route('driver.login');
+            }
+            if ($request->is('portal') || $request->is('portal/*')) {
+                return route('portal.login');
             }
 
             // Admin / Filament redirects handled by Filament itself.
