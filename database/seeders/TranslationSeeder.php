@@ -1088,6 +1088,28 @@ class TranslationSeeder extends Seeder
             ['group' => 'portal', 'key' => 'loyalty_points', 'text_ar' => 'نقاط الولاء', 'text_en' => 'Loyalty points'],
             ['group' => 'portal', 'key' => 'preferred_language', 'text_ar' => 'اللغة المفضلة', 'text_en' => 'Preferred language'],
             ['group' => 'portal', 'key' => 'profile_contact_to_edit', 'text_ar' => 'لتعديل بياناتك تواصل مع فريقنا.', 'text_en' => 'To edit your details, please contact our team.'],
+
+            // Phase 12 — Dashboard widgets
+            ['group' => 'widgets', 'key' => 'active_trips', 'text_ar' => 'الرحلات النشطة', 'text_en' => 'Active trips'],
+            ['group' => 'widgets', 'key' => 'active_trips_desc', 'text_ar' => 'مؤكدة / مُسندة / جارية', 'text_en' => 'Confirmed / assigned / in progress'],
+            ['group' => 'widgets', 'key' => 'fleet_utilization', 'text_ar' => 'استغلال الأسطول', 'text_en' => 'Fleet utilization'],
+            ['group' => 'widgets', 'key' => 'fleet_utilization_desc', 'text_ar' => 'ساعات الرحلات / الساعات المتاحة (آخر 30 يوم)', 'text_en' => 'Trip hours / available hours, last 30 days'],
+            ['group' => 'widgets', 'key' => 'revpacd', 'text_ar' => 'متوسط الإيراد لكل سيارة', 'text_en' => 'RevPACD'],
+            ['group' => 'widgets', 'key' => 'revpacd_desc', 'text_ar' => 'الإيراد لكل يوم سيارة متاح (آخر 30 يوم)', 'text_en' => 'Revenue per available car day, last 30 days'],
+            ['group' => 'widgets', 'key' => 'cars_in_maintenance', 'text_ar' => 'سيارات في الصيانة', 'text_en' => 'Cars in maintenance'],
+            ['group' => 'widgets', 'key' => 'cars_in_maintenance_desc', 'text_ar' => 'سيارات بحالة "في الصيانة" الآن', 'text_en' => 'Cars currently flagged in_maintenance'],
+            ['group' => 'widgets', 'key' => 'this_month_revenue', 'text_ar' => 'إيرادات هذا الشهر', 'text_en' => "This month's revenue"],
+            ['group' => 'widgets', 'key' => 'last_month_revenue', 'text_ar' => 'إيرادات الشهر السابق', 'text_en' => "Last month's revenue"],
+            ['group' => 'widgets', 'key' => 'vs_last_month', 'text_ar' => 'مقارنة بالشهر السابق', 'text_en' => 'vs last month'],
+            ['group' => 'widgets', 'key' => 'receivables_title', 'text_ar' => 'أعلى 10 ذمم عملاء مستحقة', 'text_en' => 'Top 10 outstanding customer balances'],
+            ['group' => 'widgets', 'key' => 'customer', 'text_ar' => 'العميل', 'text_en' => 'Customer'],
+            ['group' => 'widgets', 'key' => 'phone', 'text_ar' => 'الهاتف', 'text_en' => 'Phone'],
+            ['group' => 'widgets', 'key' => 'outstanding_balance', 'text_ar' => 'الرصيد المستحق', 'text_en' => 'Outstanding balance'],
+            ['group' => 'widgets', 'key' => 'driver_leaderboard_title', 'text_ar' => 'لوحة شرف السائقين', 'text_en' => 'Driver leaderboard (last 30 days)'],
+            ['group' => 'widgets', 'key' => 'driver', 'text_ar' => 'السائق', 'text_en' => 'Driver'],
+            ['group' => 'widgets', 'key' => 'trips_last_30', 'text_ar' => 'الرحلات (30 يوم)', 'text_en' => 'Trips (30d)'],
+            ['group' => 'widgets', 'key' => 'rating', 'text_ar' => 'التقييم', 'text_en' => 'Rating'],
+            ['group' => 'widgets', 'key' => 'commission_pct', 'text_ar' => 'نسبة العمولة', 'text_en' => 'Commission %'],
         ];
 
         foreach ($rows as $row) {

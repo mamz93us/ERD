@@ -4,7 +4,11 @@ declare(strict_types=1);
 
 namespace App\Providers\Filament;
 
+use App\Filament\Admin\Widgets\DriverLeaderboardWidget;
 use App\Filament\Admin\Widgets\ExpiringDocumentsWidget;
+use App\Filament\Admin\Widgets\OperationsStatsWidget;
+use App\Filament\Admin\Widgets\OutstandingReceivablesWidget;
+use App\Filament\Admin\Widgets\RevenueComparisonWidget;
 use App\Http\Middleware\SetLocale;
 use Filament\Auth\Pages\Login;
 use Filament\Http\Middleware\Authenticate;
@@ -44,7 +48,11 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Admin/Widgets'), for: 'App\Filament\Admin\Widgets')
             ->widgets([
                 AccountWidget::class,
+                OperationsStatsWidget::class,
+                RevenueComparisonWidget::class,
                 ExpiringDocumentsWidget::class,
+                OutstandingReceivablesWidget::class,
+                DriverLeaderboardWidget::class,
             ])
             ->userMenuItems([
                 'locale' => MenuItem::make()
