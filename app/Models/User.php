@@ -74,4 +74,14 @@ class User extends Authenticatable implements Auditable, FilamentUser, HasName
             ? $this->full_name_ar
             : $this->full_name;
     }
+
+    public function routeNotificationForWhatsapp(): ?string
+    {
+        return $this->phone;
+    }
+
+    public function preferredLocale(): string
+    {
+        return $this->preferred_locale ?? config('app.locale', 'ar');
+    }
 }

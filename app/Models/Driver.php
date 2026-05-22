@@ -13,13 +13,24 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 use OwenIt\Auditing\Contracts\Auditable;
 
 class Driver extends Model implements Auditable
 {
     /** @use HasFactory<DriverFactory> */
-    use AuditableTrait, BelongsToBranch, HasFactory, HasUuids, SoftDeletes;
+    use AuditableTrait, BelongsToBranch, HasFactory, HasUuids, Notifiable, SoftDeletes;
+
+    public function routeNotificationForWhatsapp(): ?string
+    {
+        return $this->whatsapp_phone ?? $this->phone;
+    }
+
+    public function preferredLocale(): string
+    {
+        return config('app.locale', 'ar');
+    }
 
     protected $fillable = [
         'branch_id',

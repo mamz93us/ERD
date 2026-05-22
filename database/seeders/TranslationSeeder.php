@@ -940,6 +940,22 @@ class TranslationSeeder extends Seeder
             ['group' => 'reports', 'key' => 'fines', 'text_ar' => 'المخالفات', 'text_en' => 'Fines'],
             ['group' => 'reports', 'key' => 'profit', 'text_ar' => 'الربح', 'text_en' => 'Profit'],
             ['group' => 'reports', 'key' => 'no_car_activity', 'text_ar' => 'لا توجد أنشطة للسيارات في هذه الفترة', 'text_en' => 'No car activity in this period'],
+
+            // Phase 9 — Notifications + Settings nav
+            ['group' => 'navigation', 'key' => 'settings', 'text_ar' => 'الإعدادات', 'text_en' => 'Settings'],
+            ['group' => 'navigation', 'key' => 'notification_templates', 'text_ar' => 'قوالب الإشعارات', 'text_en' => 'Notification Templates'],
+
+            // Notification template resource labels
+            ['group' => 'notification_templates', 'key' => 'key', 'text_ar' => 'مفتاح القالب', 'text_en' => 'Template key'],
+            ['group' => 'notification_templates', 'key' => 'key_help', 'text_ar' => 'يجب أن يطابق اسم الإشعار في الكود (مثل booking_confirmed).', 'text_en' => 'Must match the notification name in code (e.g. booking_confirmed).'],
+            ['group' => 'notification_templates', 'key' => 'channel', 'text_ar' => 'القناة', 'text_en' => 'Channel'],
+            ['group' => 'notification_templates', 'key' => 'locale', 'text_ar' => 'اللغة', 'text_en' => 'Locale'],
+            ['group' => 'notification_templates', 'key' => 'subject', 'text_ar' => 'العنوان', 'text_en' => 'Subject'],
+            ['group' => 'notification_templates', 'key' => 'subject_help', 'text_ar' => 'للبريد الإلكتروني فقط. اتركه فارغاً لقنوات WhatsApp.', 'text_en' => 'For email only. Leave blank for WhatsApp.'],
+            ['group' => 'notification_templates', 'key' => 'body', 'text_ar' => 'النص', 'text_en' => 'Body'],
+            ['group' => 'notification_templates', 'key' => 'body_help', 'text_ar' => 'استخدم {{var}} لإدراج متغيرات مثل {{customer_name}} أو {{trip_number}}. المتغيرات غير المعروفة تظهر كما هي.', 'text_en' => 'Use {{var}} for placeholders like {{customer_name}} or {{trip_number}}. Unknown placeholders render literally.'],
+            ['group' => 'notification_templates', 'key' => 'is_active', 'text_ar' => 'مفعَّل', 'text_en' => 'Active'],
+            ['group' => 'notification_templates', 'key' => 'updated_at', 'text_ar' => 'آخر تحديث', 'text_en' => 'Updated'],
         ];
 
         foreach ($rows as $row) {

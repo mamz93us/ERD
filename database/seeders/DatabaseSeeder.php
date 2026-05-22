@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             RateCardSeeder::class,
             CarSeeder::class,
             TranslationSeeder::class,
+            NotificationTemplateSeeder::class,
         ]);
     }
 }

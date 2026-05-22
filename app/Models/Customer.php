@@ -13,13 +13,29 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Notifications\Notifiable;
 use OwenIt\Auditing\Auditable as AuditableTrait;
 use OwenIt\Auditing\Contracts\Auditable;
 
 class Customer extends Model implements Auditable
 {
     /** @use HasFactory<CustomerFactory> */
-    use AuditableTrait, HasFactory, HasUuids, SoftDeletes;
+    use AuditableTrait, HasFactory, HasUuids, Notifiable, SoftDeletes;
+
+    public function routeNotificationForWhatsapp(): ?string
+    {
+        return $this->whatsapp_phone ?? $this->phone;
+    }
+
+    public function routeNotificationForMail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function preferredLocale(): string
+    {
+        return $this->preferred_language?->value ?? config('app.locale', 'ar');
+    }
 
     protected $fillable = [
         'corporate_account_id',
